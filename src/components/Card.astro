@@ -1,0 +1,41 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+
+const {
+  url = "#",
+  cardimage = "",
+  cardimagealt = "",
+  cardtitel = "",
+  cardtime = "",
+} = Astro.props;
+---
+
+<div class="card bg-base-100 w-full shadow-sm">
+  <a href={url}>
+    <figure class="relative overflow-hidden rounded-[10px] md:rounded-[20px]">
+      <img
+        src="/img/hvid-play.svg"
+        alt="Play"
+        class="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-14 md:h-14"
+      />
+
+      <img
+        src={cardimage}
+        alt={cardimagealt}
+        class="w-full h-auto object-cover rounded-[10px] md:rounded-[20px]"
+      />
+    </figure>
+  </a>
+
+  <div class="p-[10px] md:p-[20px]">
+    <a href={url} class="block">
+      <Heading htmlheading="h4" size="xsmall">{cardtitel}</Heading>
+    </a>
+
+    <div class="mt-[5px] flex gap-[5px] md:gap-[10px]">
+      <img src="/img/ur.svg" alt="Ur" class="w-6 h-6" />
+      <Text>{cardtime}</Text>
+    </div>
+  </div>
+</div>
