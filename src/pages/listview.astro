@@ -1,0 +1,33 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Hero from "../components/Hero.astro";
+import SogeFelt from "../components/SogeFelt.astro";
+import Link from "../components/Link.astro";
+import Text from "../components/Text.astro";
+import Heading from "../components/Heading.astro";
+import AlleFilm from "../components/Alle-film.astro";
+import Alder from "../components/Alder.astro";
+---
+
+<MainLayout title="Børnebiffen">
+  <!-- /*************************************************/ Søge felt /*************************************************/ -->
+  <section id="sogefelt">
+    <SogeFelt />
+  </section>
+
+  <!-- /*************************************************/ Alder /*************************************************/ -->
+  <section id="alder">
+    <Alder />
+  </section>
+
+  <!-- /*************************************************/ Alle film /*************************************************/ -->
+  <section id="allefilm">
+    <AlleFilm />
+  </section>
+
+  <!-- /*************************************************/ Knap /*************************************************/ -->
+  <section id="knap">
+    <Button />
+  </section>
+</MainLayout>

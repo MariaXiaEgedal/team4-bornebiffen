@@ -1,0 +1,26 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link.astro";
+import Text from "../components/Text.astro";
+import Heading from "../components/Heading.astro";
+import SingleCard from "../components/SingleCard.astro";
+import Serien from "../components/Serien.astro";
+import Minder from "../components/Minder.astro";
+---
+
+<MainLayout title="Børnebiffen">
+  <!-- /*************************************************/ singlecard /*************************************************/ -->
+  <section id="singlecard">
+    <SingleCard />
+  </section>
+
+  <!-- /*************************************************/ serien /*************************************************/ -->
+  <section id="serien">
+    <Serien />
+  </section>
+
+  <!-- /*************************************************/ Minder /*************************************************/ -->
+  <section id="Minder">
+    <Minder />
+  </section>
+</MainLayout>
