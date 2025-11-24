@@ -6,6 +6,15 @@ import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import Text from "../components/Text.astro";
 import Heading from "../components/Heading.astro";
+import Hero from "../components/Hero.astro";
+import Fortsat from "../components/Fortsat.astro";
+import Favoritter from "../components/Favoritter.astro";
+import Jul from "../components/Jul.astro";
+import Video from "../components/Video.astro";
+import Venskaber from "../components/Venskaber.astro";
+import Sjov from "../components/Sjov.astro";
+import MigFam from "../components/MigFam.astro";
+import App from "../components/App.astro";
 ---
 
 <MainLayout title="Børnebiffen">
@@ -35,63 +44,73 @@ import Heading from "../components/Heading.astro";
     dolore magna aliqua.
   </Text>
 
-  <!-- ***************************** Start Header ***************************** -->
-  <section>
+  <!-- ***************************** Start Header (kraftig rød) ***************************** -->
+  <section class="bg-red-400 text-white rounded-lg p-6 mb-6">
     <p>Hero</p>
+    <Hero />
   </section>
   <!-- ***************************** Slut Header ***************************** -->
 
-  <!-- ***************************** Start Forsæt med at se ***************************** -->
-  <section>
+  <!-- ***************************** Start Forsæt med at se (kraftig orange) ***************************** -->
+  <section class="bg-orange-300 rounded-lg p-6 mb-6">
     <Heading htmlheading="h2" size="medium">Forsæt med at se </Heading>
+    <Fortsat />
   </section>
   <!-- ***************************** Slut Forsæt med at se ***************************** -->
 
-  <!-- ***************************** Start Ugens favoritter ***************************** -->
-  <section>
+  <!-- ***************************** Start Ugens favoritter (kraftig gul) ***************************** -->
+  <section class="bg-yellow-300 rounded-lg p-6 mb-6">
     <Heading htmlheading="h2" size="medium">Ugens favoritter</Heading>
+    <Favoritter />
   </section>
   <!-- ***************************** Slut Ugens favoritter ***************************** -->
 
-  <!-- ***************************** Start Udforsk vores juleunivers ***************************** -->
-  <section>
+  <!-- ***************************** Start Udforsk vores juleunivers (kraftig grøn) ***************************** -->
+  <section class="bg-green-400 text-white rounded-lg p-6 mb-6">
     <Heading htmlheading="h2" size="medium">Udforsk vores juleunivers</Heading>
+    <Jul />
   </section>
   <!-- ***************************** Slut Udforsk vores juleunivers ***************************** -->
 
-  <!-- ***************************** Start Video ***************************** -->
-  <section>
+  <!-- ***************************** Start Video (kraftig cyan) ***************************** -->
+  <section class="bg-cyan-300 rounded-lg p-6 mb-6">
     <p>Video</p>
+    <Video />
   </section>
   <!-- ***************************** Slut Video ***************************** -->
 
-  <!-- ***************************** Start Venskaber ***************************** -->
-  <section>
+  <!-- ***************************** Start Venskaber (kraftig blå) ***************************** -->
+  <section class="bg-blue-400 text-white rounded-lg p-6 mb-6">
     <Heading htmlheading="h2" size="medium">Venskaber</Heading>
+    <Venskaber />
   </section>
   <!-- ***************************** Slut Venskaber ***************************** -->
 
-  <!-- ***************************** Start Sjov og ballade ***************************** -->
-  <section>
+  <!-- ***************************** Start Sjov og ballade (kraftig indigo) ***************************** -->
+  <section class="bg-indigo-400 text-white rounded-lg p-6 mb-6">
     <Heading htmlheading="h2" size="medium">Sjov og ballade</Heading>
+    <Sjov />
   </section>
   <!-- ***************************** Slut Sjov og ballade ***************************** -->
 
-  <!-- ***************************** Start Mig og min familie ***************************** -->
-  <section>
+  <!-- ***************************** Start Mig og min familie (kraftig violet) ***************************** -->
+  <section class="bg-violet-400 text-white rounded-lg p-6 mb-6">
     <Heading htmlheading="h2" size="medium">Mig og min familie</Heading>
+    <MigFam />
   </section>
   <!-- ***************************** Slut Mig og min familie ***************************** -->
 
-  <!-- ***************************** Start Billede ***************************** -->
-  <section>
+  <!-- ***************************** Start Billede (kraftig lilla) ***************************** -->
+  <section class="bg-purple-400 text-white rounded-lg p-6 mb-6">
     <p>Billede</p>
+    <img src="/img/går-sammen.svg" alt="" />
   </section>
   <!-- ***************************** Slut Billede Sektion ***************************** -->
 
-  <!-- ***************************** Start App Sektion ***************************** -->
-  <section>
+  <!-- ***************************** Start App Sektion (kraftig pink) ***************************** -->
+  <section class="bg-pink-400 text-white rounded-lg p-6 mb-6">
     <p>App</p>
+    <App />
   </section>
   <!-- ***************************** Slut App Sektion ***************************** -->
 </MainLayout>
