@@ -1,0 +1,12 @@
+---
+// Henter parametrene fra Astro.props
+const { teksttype = "brødtekst", stylingclasses = "" } = Astro.props;
+
+//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
+const sizeClasses = {
+  brødtekst: "text-[16px] md:text-[20px] font-nunito",
+  fedbrødtekst: "text-[16px] md:text-[20px] font-bold font-nunito",
+};
+---
+
+<p class:list={[sizeClasses[teksttype], stylingclasses]}><slot /></p>

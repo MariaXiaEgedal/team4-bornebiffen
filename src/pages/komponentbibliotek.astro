@@ -1,0 +1,32 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+---
+
+<MainLayout title="Børnebiffen">
+  <!-- ***************************** Start intro ***************************** -->
+  <Heading htmlheading="h1" size="large">Komponent bibliotek</Heading>
+  <Text teksttype="brødtekst"
+    >Komponent bibliotek til projekt [navn på projektet]
+  </Text>
+
+  <Text teksttype="brødtekst"
+    >Komponent biblioteket samler de komponenter, der anvendes på sitet (på nær
+    header/navbar og footer)
+  </Text>
+  <!-- ***************************** End intro ***************************** -->
+
+  <!-- ***************************** Start Typografi ***************************** -->
+  <Heading htmlheading="h2" size="medium">Typografi</Heading>
+
+  <Heading htmlheading="h1" size="large">H1 large</Heading>
+  <Heading htmlheading="h2" size="medium">H2 medium</Heading>
+  <Heading htmlheading="h3" size="small">H3 small</Heading>
+  <Heading htmlheading="h4" size="xsmall">H4 xsmall</Heading>
+  <Text teksttype="brødtekst">Brødtekst </Text>
+  <Text teksttype="fedbrødtekst">Fedbrødtekst </Text>
+  <!-- ***************************** Start Typografi ***************************** -->
+</MainLayout>
+>

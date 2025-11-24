@@ -1,0 +1,29 @@
+---
+const {
+  htmlheading = "h2",
+  size = "medium",
+  font = undefined,
+  stylingclasses = "",
+} = Astro.props;
+const Htmlheading = htmlheading;
+
+const sizeClasses = {
+  large: "text-[25px] md:text-[75px]",
+  medium: "text-[20px] md:text-[45px]",
+  small: "text-[18px] md:text-[30px]",
+  xsmall: "text-[16px] md:text-[25px]",
+};
+
+const defaultFontForSize = {
+  large: "font-wendyone",
+  medium: "font-wendyone",
+  small: "font-nunito font-bold",
+  xsmall: "font-nunito font-bold",
+};
+
+const fontClass = font ? font : (defaultFontForSize[size] ?? "");
+---
+
+<Htmlheading class:list={[sizeClasses[size], fontClass, stylingclasses]}>
+  <slot />
+</Htmlheading>
