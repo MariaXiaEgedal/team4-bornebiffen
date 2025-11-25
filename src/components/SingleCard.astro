@@ -1,4 +1,6 @@
 ---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
 const {
   hero = "/img/ritahero.png",
   avatar = "/img/rita.png",
@@ -13,63 +15,72 @@ const {
 
 <div class="md:mx-[100px]">
   <div class="relative rounded-xl overflow-hidden">
-    <img
-      src={hero}
-      alt={titel}
-      class="w-full h-[320px] md:h-[480px] object-cover"
-    />
+    <img src={hero} alt={titel} class="w-full object-cover" />
 
-    <button
-      aria-label="Play"
-      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-transparent border border-white flex items-center justify-center"
-    >
-      <svg
-        viewBox="0 0 64 64"
-        class="w-12 h-12 text-white"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle stroke="white" stroke-opacity="0.6" stroke-width="5"></circle>
-        <polygon points="26,20 46,32 26,44" fill="white"></polygon>
-      </svg>
-    </button>
+    <img
+      src="/img/hvid-play.svg"
+      alt="Play"
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-25 md:h-25 z-20"
+    />
 
     <div class="absolute left-6 bottom-6 flex items-end gap-4">
       <img
         src={avatar}
         alt="avatar"
-        class="w-25 h-25 md:w-50 md:h-50 object-cover"
+        class="w-25 h-25 md:w-60 md:h-60 object-cover"
       />
 
       <div class="text-white">
-        <h2
-          class="text-[22px] md:text-[40px] font-wendyone text-orange-400 drop-shadow-lg leading-tight"
+        <Heading
+          htmlheading="h1"
+          size="large"
+          stylingclasses="text-orange-400 drop-shadow-lg leading-tight"
         >
           {titel}
-        </h2>
+        </Heading>
 
         <div class="flex items-center gap-4 mt-2 text-white text-sm opacity-95">
-          <span class="flex items-center gap-2 px-3 py-1 rounded-full">
-            <span class="font-nunito">{tid}</span>
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1 rounded-full">
-            <span class="font-nunito">{alder}</span>
-          </span>
+          <Heading
+            htmlheading="h3"
+            size="xsmall"
+            stylingclasses="flex items-center gap-2 px-3 py-1 rounded-full"
+          >
+            {alder}
+          </Heading>
+          <Heading
+            htmlheading="h3"
+            size="xsmall"
+            stylingclasses="flex items-center gap-2 px-3 py-1 rounded-full"
+          >
+            <img
+              src="/img/ur-hvid.svg"
+              alt="Ur"
+              class="w-4 h-4 md:w-5 md:h-5 mr-2"
+            />
+            {tid}
+          </Heading>
         </div>
       </div>
     </div>
   </div>
 
   <div
-    class="bg-pink-300 rounded-lg p-6 text-black grid grid-cols-1 md:grid-cols-3 gap-4"
+    class="bg-pink-300 rounded-lg p-6 text-black grid grid-cols-1 md:grid-cols-12 gap-4 mt-5"
   >
-    <div class="md:col-span-2">
-      <h3 class="font-nunito font-bold text-lg mb-2">{titel}</h3>
-      <p class="text-sm leading-relaxed">{beskrivelse}</p>
+    <div class="md:col-span-6">
+      <Heading
+        htmlheading="h3"
+        size="small"
+        stylingclasses="font-nunito font-bold text-lg mb-2">{titel}</Heading
+      >
+      <Text teksttype="brødtekst" stylingclasses="text-sm leading-relaxed"
+        >{beskrivelse}</Text
+      >
     </div>
 
-    <div class="text-sm">
-      <p class="font-nunito font-bold">{instruktør}</p>
-      <p class="mt-2">{emner}</p>
+    <div class="text-sm md:col-span-6">
+      <Text teksttype="fedbrødtekst">{instruktør}</Text>
+      <Text teksttype="brødtekst" stylingclasses="mt-2">{emner}</Text>
     </div>
   </div>
 </div>
