@@ -1,3 +1,56 @@
 ---
-
+import CardCarousel from "../components/CardCarousel.astro";
 ---
+
+<!-- ***************************** Start Minder om ***************************** -->
+<section class="px-[20px] md:px-[50px] lg:px-[100px]">
+  <CardCarousel
+    titel="Minder om"
+    bg="bg-green-300"
+    cards={[
+      {
+        url: "/singleview",
+        cardimage: "/img/minder-om1.webp",
+        cardimagealt: "Krokodillys",
+        cardtitel: "Krokodillys",
+        cardtime: "6 min",
+      },
+      {
+        url: "/singleview",
+        cardimage: "/img/minder-om2.webp",
+        cardimagealt: "Ville og Vilde Kanin",
+        cardtitel: "Ville og Vilde Kanin",
+        cardtime: "29 min",
+      },
+      {
+        url: "/singleview",
+        cardimage: "/img/minder-om3.webp",
+        cardimagealt: "Godbid",
+        cardtitel: "Godbid",
+        cardtime: "1 min",
+      },
+      {
+        url: "/singleview",
+        cardimage: "/img/minder-om4.webp",
+        cardimagealt: "Zebra",
+        cardtitel: "Zebra",
+        cardtime: "3 min",
+      },
+      {
+        url: "/singleview",
+        cardimage: "/img/minder-om5.webp",
+        cardimagealt: "Krokodille",
+        cardtitel: "Krokodille",
+        cardtime: "4 min",
+      },
+      {
+        url: "/singleview",
+        cardimage: "/img/minder-om6.webp",
+        cardimagealt: "Den lange rejse",
+        cardtitel: "Den lange rejse",
+        cardtime: "30 min",
+      },
+    ]}
+  />
+</section>
+<!-- ***************************** Slut Minder om ***************************** -->

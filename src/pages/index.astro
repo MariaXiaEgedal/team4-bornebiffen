@@ -9,27 +9,13 @@ import Heading from "../components/Heading.astro";
 import Hero from "../components/Hero.astro";
 import Fortsat from "../components/Fortsat.astro";
 import Favoritter from "../components/Favoritter.astro";
-import Jul from "../components/Jul.astro";
 import Video from "../components/Video.astro";
-import Venskaber from "../components/Venskaber.astro";
-import Sjov from "../components/Sjov.astro";
-import MigFam from "../components/MigFam.astro";
 import App from "../components/App.astro";
+import CardCarousel from "../components/CardCarousel.astro";
 ---
 
 <MainLayout title="Børnebiffen">
-  <article>
-    <h1>Index overskrift</h1>
-    <Button>Klik!</Button>
-    <p>
-      Link til <Link href="https://www.kea.dk" target="_blank"
-        >En anden side</Link
-      >
-    </p>
-    <Image src={thumbsup} alt="" />
-  </article>
-
-  <Heading htmlheading="h1" size="large">Dette er et eksempel på H1</Heading>
+  <!-- <Heading htmlheading="h1" size="large">Dette er et eksempel på H1</Heading>
   <Heading htmlheading="h2" size="medium">Dette er et eksempel på H2</Heading>
   <Heading htmlheading="h3" size="small">Dette er et eksempel på H3</Heading>
   <Heading htmlheading="h4" size="xsmall">Dette er et eksempel på H4</Heading>
@@ -42,7 +28,7 @@ import App from "../components/App.astro";
     Dette er et eksempel på fedbrødtekst. Lorem ipsum dolor sit amet,
     consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
     dolore magna aliqua.
-  </Text>
+  </Text> -->
 
   <!-- ***************************** Start Header (kraftig rød) ***************************** -->
   <section
@@ -75,30 +61,168 @@ import App from "../components/App.astro";
   <!-- ***************************** Slut Udforsk vores juleunivers ***************************** -->
 
   <!-- ***************************** Start Video (kraftig cyan) ***************************** -->
-  <section class="bg-cyan-300 rounded-lg p-6 mb-6">
-    <p>Video</p>
+  <section class="">
     <Video />
   </section>
   <!-- ***************************** Slut Video ***************************** -->
 
-  <!-- ***************************** Start Venskaber (kraftig blå) ***************************** -->
-  <section class="bg-blue-400 text-white rounded-lg p-6 mb-6">
-    <Heading htmlheading="h2" size="medium">Venskaber</Heading>
-    <Venskaber />
+  <!-- ***************************** Start Venskaber ***************************** -->
+  <section class="px-[20px] md:px-[50px] lg:px-[100px]">
+    <CardCarousel
+      titel="Venskaber"
+      bg="bg-green-300"
+      cards={[
+        {
+          url: "/singleview",
+          cardimage: "/img/venskaber1.webp",
+          cardimagealt: "Dyrevennerne: Min ven Lauge",
+          cardtitel: "Dyrevennerne: Min ven Lauge",
+          cardtime: "12 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/venskaber2.webp",
+          cardimagealt: "Lillefinger: Min bedste ven",
+          cardtitel: "Lillefinger: Min bedste ven",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/venskaber3.webp",
+          cardimagealt: "Min lille hund Mester 4:10 - En ven på besøg",
+          cardtitel: "Min lille hund Mester 4:10 - En ven på besøg",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/venskaber4.webp",
+          cardimagealt: "Hvis ven?",
+          cardtitel: "Hvis ven?",
+          cardtime: " min",
+        },
+
+        {
+          url: "/singleview",
+          cardimage: "/img/venskaber5.webp",
+          cardimagealt: "Vuf - en ny ven",
+          cardtitel: "Vuf - en ny ven",
+          cardtime: "6 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/venskaber6.webp",
+          cardimagealt: "Alma flytter på landet: Min gode gamle ven",
+          cardtitel: "Alma flytter på landet: Min gode gamle ven",
+          cardtime: "10 min",
+        },
+      ]}
+    />
   </section>
   <!-- ***************************** Slut Venskaber ***************************** -->
 
-  <!-- ***************************** Start Sjov og ballade (kraftig indigo) ***************************** -->
-  <section class="bg-indigo-400 text-white rounded-lg p-6 mb-6">
-    <Heading htmlheading="h2" size="medium">Sjov og ballade</Heading>
-    <Sjov />
+  <!-- ***************************** Start Sjov og ballade ***************************** -->
+  <section class="px-[20px] md:px-[50px] lg:px-[100px]">
+    <CardCarousel
+      titel="Sjov og ballade"
+      bg="bg-green-300"
+      cards={[
+        {
+          url: "/singleview",
+          cardimage: "/img/sjov1.webp",
+          cardimagealt: "Mortens badebold",
+          cardtitel: "Mortens badebold",
+          cardtime: "8 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/sjov2.webp",
+          cardimagealt: "Cirkeline: Storbyens mus",
+          cardtitel: "Cirkeline: Storbyens mus",
+          cardtime: "12 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/sjov3.webp",
+          cardimagealt: "Blæksprutte",
+          cardtitel: "Blæksprutte",
+          cardtime: "4 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/sjov4.webp",
+          cardimagealt: "Rollinger-Raketten",
+          cardtitel: "Rollinger-Raketten",
+          cardtime: "8 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/sjov5.webp",
+          cardimagealt: "Lili bliver vred",
+          cardtitel: "Lili bliver vred",
+          cardtime: "3 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/sjov6.webp",
+          cardimagealt: "Dyrevennerne: Jeg stikker af!",
+          cardtitel: "Dyrevennerne: Jeg stikker af!",
+          cardtime: "12 min",
+        },
+      ]}
+    />
   </section>
   <!-- ***************************** Slut Sjov og ballade ***************************** -->
 
-  <!-- ***************************** Start Mig og min familie (kraftig violet) ***************************** -->
-  <section class="bg-violet-400 text-white rounded-lg p-6 mb-6">
-    <Heading htmlheading="h2" size="medium">Mig og min familie</Heading>
-    <MigFam />
+  <!-- ***************************** Start Mig og min familie  ***************************** -->
+  <section class="px-[20px] md:px-[50px] lg:px-[100px]">
+    <CardCarousel
+      titel="Mig og min familie"
+      bg="bg-green-300"
+      cards={[
+        {
+          url: "/singleview",
+          cardimage: "/img/familie1.webp",
+          cardimagealt: "Mig og min familie: Danni",
+          cardtitel: "Mig og min familie: Danni",
+          cardtime: "15 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/familie2.webp",
+          cardimagealt: "På tur med far: Lillesøster Lucia 5:6",
+          cardtitel: "På tur med far: Lillesøster Lucia 5:6",
+          cardtime: "19 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/familie3.webp",
+          cardimagealt: "Lille frø",
+          cardtitel: "Lille frø",
+          cardtime: "8 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/familie4.webp",
+          cardimagealt: "Mig og min familie: Ronja",
+          cardtitel: "Mig og min familie: Ronja",
+          cardtime: "14 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/familie5.webp",
+          cardimagealt: "Planeten Willi",
+          cardtitel: "Planeten Willi",
+          cardtime: "10 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/familie6.webp",
+          cardimagealt: "Min flyvende mor",
+          cardtitel: "Min flyvende mor",
+          cardtime: "7 min",
+        },
+      ]}
+    />
   </section>
   <!-- ***************************** Slut Mig og min familie ***************************** -->
 

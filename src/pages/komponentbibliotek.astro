@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Card from "../components/Card.astro";
+import CardCarousel from "../components/CardCarousel.astro";
 ---
 
 <MainLayout title="Børnebiffen">
@@ -31,8 +32,59 @@ import Card from "../components/Card.astro";
   <!-- ***************************** Start Typografi ***************************** -->
 </MainLayout>
 
+<!-- <Carousel2 /> -->
+<!-- <Carousel /> -->
+<CardCarousel
+  titel="Venskaber"
+  bg="bg-green-300"
+  cards={[
+    {
+      url: "/singleview",
+      cardimage: "/img/min-ven-lauge.webp",
+      cardimagealt: "Dyrevennerne: Min ven Lauge",
+      cardtitel: "Dyrevennerne: Min ven Lauge",
+      cardtime: "12 min",
+    },
+    {
+      url: "/singleview",
+      cardimage: "/img/min-ven-lauge.webp",
+      cardimagealt: "Dyrevennerne: Min ven Lauge",
+      cardtitel: "Dyrevennerne: Min ven Lauge",
+      cardtime: "12 min",
+    },
+    {
+      url: "/singleview",
+      cardimage: "/img/min-ven-lauge.webp",
+      cardimagealt: "Dyrevennerne: Min ven Lauge",
+      cardtitel: "Dyrevennerne: Min ven Lauge",
+      cardtime: "12 min",
+    },
+    {
+      url: "/singleview",
+      cardimage: "/img/min-ven-lauge.webp",
+      cardimagealt: "Dyrevennerne: Min ven Lauge",
+      cardtitel: "Dyrevennerne: Min ven Lauge",
+      cardtime: "12 min",
+    },
+    {
+      url: "/singleview",
+      cardimage: "/img/min-ven-lauge.webp",
+      cardimagealt: "Dyrevennerne: Min ven Lauge",
+      cardtitel: "Dyrevennerne: Min ven Lauge",
+      cardtime: "12 min",
+    },
+    {
+      url: "/singleview",
+      cardimage: "/img/min-ven-lauge.webp",
+      cardimagealt: "Dyrevennerne: Min ven Lauge",
+      cardtitel: "Dyrevennerne: Min ven Lauge",
+      cardtime: "12 min",
+    },
+  ]}
+/>
+
 <Card
-  url="#"
+  url="/singleview"
   cardimage="/img/min-ven-lauge.webp"
   cardimagealt="Dyrevennerne: Min ven Lauge"
   cardtitel="Dyrevennerne: Min ven Lauge"
