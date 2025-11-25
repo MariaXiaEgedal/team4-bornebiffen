@@ -2,40 +2,68 @@
 import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 
-const {
-  url = "#",
-  cardimage = "",
-  cardimagealt = "",
-  cardtitel = "",
-  cardtime = "",
-} = Astro.props;
+const { url, cardimage, cardimagealt, cardtitel, cardtime, progress, rank } =
+  Astro.props;
+
+const rankColorMap = {
+  1: "text-sky-400",
+  2: "text-orange-400",
+  3: "text-pink-300",
+};
+const rankColor = rankColorMap[rank] || "";
 ---
 
-<a href={url} class="group block">
-  <figure class="relative overflow-hidden rounded-[10px] md:rounded-[20px]">
-    <img
-      src="/img/hvid-play.svg"
-      alt="Play"
-      class="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-14 md:h-14 z-20 pointer-events-none"
-    />
+<article class="...">
+  <a href={url} class="block">
+    <div class="relative">
+      <!-- BILLEDE -->
+      <img
+        src={cardimage}
+        alt={cardimagealt}
+        class="w-full h-auto rounded-xl"
+      />
 
-    <img
-      src={cardimage}
-      alt={cardimagealt}
-      class="block max-w-full object-cover rounded-[10px] md:rounded-[20px] transform transition-transform duration-500 ease-out origin-center group-hover:scale-110 will-change-transform"
-    />
-  </figure>
+      <!-- RANK -->
+      {
+        rank && (
+          <Text
+            stylingclasses={`absolute -left-4 -bottom-4 md:-bottom-8 lg:-bottom-10 font-bold leading-none ${rankColor} text-[100px] md:text-[150px] lg:text-[200px]`}
+          >
+            {rank}
+          </Text>
+        )
+      }
 
-  <div>
-    <Heading htmlheading="h4" size="xsmall" stylingclasses="mt-3 md:mt-4"
-      >{cardtitel}
-    </Heading>
+      <!-- PLAY-KNAP -->
+      <img
+        src="/img/hvid-play.svg"
+        alt="Play"
+        class="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-14 md:h-14 z-20 pointer-events-none"
+      />
 
-    <div class="mt-1 md:mt-2 flex items-center gap-[5px] md:gap-[10px]">
-      <img src="/img/ur.svg" alt="Ur" class="w-6 h-6" />
-      <Text teksttype="brødtekst" stylingclasses="m-0 leading-none"
-        >{cardtime}</Text
-      >
+      <!-- PROGRESS BAR -->
+      {
+        progress !== null && (
+          <div
+            class="absolute left-0 bottom-0 bg-red-500"
+            style={`height:10px; width:${progress}%`}
+          />
+        )
+      }
     </div>
-  </div>
-</a>
+
+    <!-- TITEL OG TID -->
+    <div class="mt-3 md:mt-4">
+      <Heading htmlheading="h4" size="xsmall" stylingclasses="mt-3 md:mt-4"
+        >{cardtitel}
+      </Heading>
+
+      <div class="mt-1 md:mt-2 flex items-center gap-[5px] md:gap-[10px]">
+        <img src="/img/ur.svg" alt="Ur" class="w-6 h-6" />
+        <Text teksttype="brødtekst" stylingclasses="m-0 leading-none"
+          >{cardtime}</Text
+        >
+      </div>
+    </div>
+  </a>
+</article>

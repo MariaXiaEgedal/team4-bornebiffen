@@ -5,51 +5,80 @@ import Link from "../components/Link.astro";
 import Text from "../components/Text.astro";
 import Heading from "../components/Heading.astro";
 import Hero from "../components/Hero.astro";
-import Fortsat from "../components/Fortsat.astro";
-import Favoritter from "../components/Favoritter.astro";
 import Video from "../components/Video.astro";
 import App from "../components/App.astro";
+import Card from "../components/Card.astro";
 import CardCarousel from "../components/CardCarousel.astro";
 ---
 
 <MainLayout title="Børnebiffen">
-  <!-- <Heading htmlheading="h1" size="large">Dette er et eksempel på H1</Heading>
-  <Heading htmlheading="h2" size="medium">Dette er et eksempel på H2</Heading>
-  <Heading htmlheading="h3" size="small">Dette er et eksempel på H3</Heading>
-  <Heading htmlheading="h4" size="xsmall">Dette er et eksempel på H4</Heading>
-  <Text teksttype="brødtekst ">
-    Dette er et eksempel på brødtekst. Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua.
-  </Text>
-  <Text teksttype="fedbrødtekst" stylingclasses=" text-green-400">
-    Dette er et eksempel på fedbrødtekst. Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua.
-  </Text> -->
-
-  <!-- ***************************** Start Header (kraftig rød) ***************************** -->
+  <!-- ***************************** Start Header ***************************** -->
   <section>
     <Hero />
   </section>
   <!-- ***************************** Slut Header ***************************** -->
 
-  <!-- ***************************** Start Forsæt med at se (kraftig orange) ***************************** -->
-  <section class="bg-orange-300 rounded-lg p-6 mb-6">
-    <Heading htmlheading="h2" size="medium">Forsæt med at se </Heading>
-    <Fortsat />
+  <!-- ***************************** Start Forsæt med at se ***************************** -->
+  <section class="px-[20px] md:px-[50px] lg:px-[100px] pt-[40px] md:pt-[80px]">
+    <Heading htmlheading="h2" size="medium">Forsæt med at se</Heading>
+
+    <div class="grid gap-6 grid-cols-2 lg:grid-cols-3">
+      <Card
+        url="/singleview"
+        cardimage="/img/rita1.webp"
+        cardimagealt="Rita og Krokodille: Skovturen"
+        cardtitel="Rita og Krokodille: Skovturen"
+        cardtime="5 min"
+        progress={25}
+      />
+
+      <Card
+        url="/singleview"
+        cardimage="/img/venskaber2.webp"
+        cardimagealt="Lillefinger - Min bedste ven"
+        cardtitel="Lillefinger - Min bedste ven"
+        cardtime="5 min"
+        progress={60}
+      />
+    </div>
   </section>
   <!-- ***************************** Slut Forsæt med at se ***************************** -->
 
   <!-- ***************************** Start Ugens favoritter (kraftig gul) ***************************** -->
-  <section class="bg-yellow-300 rounded-lg p-6 mb-6">
+  <section class="px-[20px] md:px-[50px] lg:px-[100px] pt-[40px] md:pt-[80px]">
     <Heading htmlheading="h2" size="medium">Ugens favoritter</Heading>
-    <Favoritter />
+
+    <div class="grid gap-6 grid-cols-3 auto-rows-auto">
+      <Card
+        url="/singleview"
+        cardimage="/img/vitello.webp"
+        cardimagealt="Vitello får en klam kæreste"
+        cardtitel="Vitello får en klam kæreste"
+        cardtime="5 min"
+        rank={1}
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/orla.webp"
+        cardimagealt="Orla Frøsnapper"
+        cardtitel="Orla Frøsnapper"
+        cardtime="12 min"
+        rank={2}
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/rita1.webp"
+        cardimagealt="Rita og Krokodille: Zoo"
+        cardtitel="Rita og Krokodille: Zoo"
+        cardtime="5 min"
+        rank={3}
+      />
+    </div>
   </section>
   <!-- ***************************** Slut Ugens favoritter ***************************** -->
 
   <!-- ***************************** Start Udforsk vores juleunivers ***************************** -->
-  <section class="px-[20px] md:px-[50px] lg:px-[100px]">
+  <section class="px-[20px] md:px-[50px] lg:px-[100px] pt-[40px] md:pt-[80px]">
     <CardCarousel
       titel="Udforsk vores juleunivers"
       bg="bg-red-500"
