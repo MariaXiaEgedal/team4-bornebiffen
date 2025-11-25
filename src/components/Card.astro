@@ -11,31 +11,33 @@ const {
 } = Astro.props;
 ---
 
-<div class="card bg-base-100 w-full shadow-sm">
-  <a href={url}>
+<div class="bg-transparent">
+  <a href={url} class="group block">
     <figure class="relative overflow-hidden rounded-[10px] md:rounded-[20px]">
       <img
         src="/img/hvid-play.svg"
         alt="Play"
-        class="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-14 md:h-14"
+        class="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-14 md:h-14 z-20 pointer-events-none"
       />
 
       <img
         src={cardimage}
         alt={cardimagealt}
-        class="w-full h-auto object-cover rounded-[10px] md:rounded-[20px]"
+        class="block w-auto max-w-full h-auto object-cover rounded-[10px] md:rounded-[20px] transform transition-transform duration-500 ease-out origin-center group-hover:scale-110 will-change-transform"
       />
     </figure>
-  </a>
 
-  <div class="p-[10px] md:p-[20px]">
-    <a href={url} class="block">
-      <Heading htmlheading="h4" size="xsmall">{cardtitel}</Heading>
-    </a>
+    <div>
+      <Heading htmlheading="h4" size="xsmall" class="mt-[10px] md:mt-[20px]"
+        >{cardtitel}
+      </Heading>
 
-    <div class="mt-[5px] flex gap-[5px] md:gap-[10px]">
-      <img src="/img/ur.svg" alt="Ur" class="w-6 h-6" />
-      <Text>{cardtime}</Text>
+      <div class="mt-1 flex items-center gap-[5px] md:gap-[10px]">
+        <img src="/img/ur.svg" alt="Ur" class="w-6 h-6" />
+        <Text teksttype="brødtekst" stylingclasses="m-0 leading-none"
+          >{cardtime}</Text
+        >
+      </div>
     </div>
-  </div>
+  </a>
 </div>
