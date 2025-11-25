@@ -2,8 +2,6 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
 import Text from "../components/Text.astro";
 import Heading from "../components/Heading.astro";
 import Hero from "../components/Hero.astro";
@@ -31,8 +29,7 @@ import CardCarousel from "../components/CardCarousel.astro";
   </Text> -->
 
   <!-- ***************************** Start Header (kraftig rød) ***************************** -->
-  <section class="bg-red-400 text-white rounded-lg p-6 mb-6">
-    <p>Hero</p>
+  <section>
     <Hero />
   </section>
   <!-- ***************************** Slut Header ***************************** -->
@@ -105,13 +102,13 @@ import CardCarousel from "../components/CardCarousel.astro";
   <!-- ***************************** Slut Udforsk vores juleunivers ***************************** -->
 
   <!-- ***************************** Start Video (kraftig cyan) ***************************** -->
-  <section class="">
+  <section class="pt-[40px] md:pt-[80px]">
     <Video />
   </section>
   <!-- ***************************** Slut Video ***************************** -->
 
   <!-- ***************************** Start Venskaber ***************************** -->
-  <section class="px-[20px] md:px-[50px] lg:px-[100px]">
+  <section class="px-[20px] md:px-[50px] lg:px-[100px] pt-[40px] md:pt-[80px]">
     <CardCarousel
       titel="Venskaber"
       bg="bg-green-300"
@@ -165,7 +162,7 @@ import CardCarousel from "../components/CardCarousel.astro";
   <!-- ***************************** Slut Venskaber ***************************** -->
 
   <!-- ***************************** Start Sjov og ballade ***************************** -->
-  <section class="px-[20px] md:px-[50px] lg:px-[100px]">
+  <section class="px-[20px] md:px-[50px] lg:px-[100px] pt-[40px] md:pt-[80px]">
     <CardCarousel
       titel="Sjov og ballade"
       bg="bg-orange-400"
@@ -218,7 +215,7 @@ import CardCarousel from "../components/CardCarousel.astro";
   <!-- ***************************** Slut Sjov og ballade ***************************** -->
 
   <!-- ***************************** Start Mig og min familie  ***************************** -->
-  <section class="px-[20px] md:px-[50px] lg:px-[100px]">
+  <section class="px-[20px] md:px-[50px] lg:px-[100px] pt-[40px] md:pt-[80px]">
     <CardCarousel
       titel="Mig og min familie"
       bg="bg-pink-300"
@@ -271,14 +268,15 @@ import CardCarousel from "../components/CardCarousel.astro";
   <!-- ***************************** Slut Mig og min familie ***************************** -->
 
   <!-- ***************************** Start Billede (kraftig lilla) ***************************** -->
-  <section class="bg-purple-400 text-white rounded-lg p-6 mb-6">
-    <p>Billede</p>
-    <img src="/img/går-sammen.svg" alt="" />
+  <section
+    class="flex items-center justify-center px-[20px] md:px-[100px] pt-[40px] md:pt-[80px]"
+  >
+    <img src="/img/går-sammen.svg" alt="Går sammen" />
   </section>
   <!-- ***************************** Slut Billede Sektion ***************************** -->
 
   <!-- ***************************** Start App Sektion (kraftig pink) ***************************** -->
-  <section class="bg-pink-400 text-white rounded-lg p-6 mb-6">
+  <section class="bg-pink-400 py-[40px] md:py-[80px]">
     <p>App</p>
     <App />
   </section>
