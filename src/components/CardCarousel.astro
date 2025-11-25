@@ -5,11 +5,13 @@ import Card from "./Card.astro";
 const { titel = "", bg = "", cards = [] } = Astro.props;
 ---
 
-<div class="">
+<div>
   <Heading htmlheading="h2" size="medium">{titel}</Heading>
 
   <section class={`md:rounded-4xl mt-[10px] ${bg} -mx-[20px] md:mx-0`}>
-    <div class="px-[20px] md:px-[50px] lg:px-[100px]">
+    <div
+      class="px-[20px] md:px-[50px] lg:px-[100px] py-[20px] md:py-[30px] lg:py-[40px]"
+    >
       <div class="overflow-x-auto snap-x snap-mandatory">
         <div class="flex gap-[20px] py-4">
           {
