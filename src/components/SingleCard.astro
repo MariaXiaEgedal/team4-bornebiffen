@@ -1,0 +1,75 @@
+---
+const {
+  hero = "/img/ritahero.png",
+  avatar = "/img/rita.png",
+  titel = "Rita og Krokodille: Skovturen",
+  alder = "Tilladt for alle",
+  tid = "5 min",
+  beskrivelse = `Vennerne skal ud og samle kastanjer i skoven. Rita formaner Krokodille at blive på stien, så han ikke farer vild. Men da hun ser et helt tæppe af glitrende kastanjer glemmer hun alt, hvad hun har sagt. I jagten på de flotte kastanjer glemmer hun alt om stien og farer vild. Krokodille hjælper hende at finde tilbage.`,
+  instruktør = "Instruktør: Siri Melchior (Danmark, 2013)",
+  emner = "Emner: Fantasivenner, Venskab, Skovture, Fare vild",
+} = Astro.props;
+---
+
+<div class="md:mx-[100px]">
+  <div class="relative rounded-xl overflow-hidden">
+    <img
+      src={hero}
+      alt={titel}
+      class="w-full h-[320px] md:h-[480px] object-cover"
+    />
+
+    <button
+      aria-label="Play"
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-transparent border border-white flex items-center justify-center"
+    >
+      <svg
+        viewBox="0 0 64 64"
+        class="w-12 h-12 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle stroke="white" stroke-opacity="0.6" stroke-width="5"></circle>
+        <polygon points="26,20 46,32 26,44" fill="white"></polygon>
+      </svg>
+    </button>
+
+    <div class="absolute left-6 bottom-6 flex items-end gap-4">
+      <img
+        src={avatar}
+        alt="avatar"
+        class="w-25 h-25 md:w-50 md:h-50 object-cover"
+      />
+
+      <div class="text-white">
+        <h2
+          class="text-[22px] md:text-[40px] font-wendyone text-orange-400 drop-shadow-lg leading-tight"
+        >
+          {titel}
+        </h2>
+
+        <div class="flex items-center gap-4 mt-2 text-white text-sm opacity-95">
+          <span class="flex items-center gap-2 px-3 py-1 rounded-full">
+            <span class="font-nunito">{tid}</span>
+          </span>
+          <span class="flex items-center gap-2 px-3 py-1 rounded-full">
+            <span class="font-nunito">{alder}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="bg-pink-300 rounded-lg p-6 text-black grid grid-cols-1 md:grid-cols-3 gap-4"
+  >
+    <div class="md:col-span-2">
+      <h3 class="font-nunito font-bold text-lg mb-2">{titel}</h3>
+      <p class="text-sm leading-relaxed">{beskrivelse}</p>
+    </div>
+
+    <div class="text-sm">
+      <p class="font-nunito font-bold">{instruktør}</p>
+      <p class="mt-2">{emner}</p>
+    </div>
+  </div>
+</div>
