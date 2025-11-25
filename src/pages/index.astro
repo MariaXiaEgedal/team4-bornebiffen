@@ -31,9 +31,7 @@ import CardCarousel from "../components/CardCarousel.astro";
   </Text> -->
 
   <!-- ***************************** Start Header (kraftig rød) ***************************** -->
-  <section
-    class="bg-[var(--color-purple-950)] text-red-700 rounded-lg p-6 mb-6"
-  >
+  <section class="bg-red-400 text-white rounded-lg p-6 mb-6">
     <p>Hero</p>
     <Hero />
   </section>
@@ -53,10 +51,56 @@ import CardCarousel from "../components/CardCarousel.astro";
   </section>
   <!-- ***************************** Slut Ugens favoritter ***************************** -->
 
-  <!-- ***************************** Start Udforsk vores juleunivers (kraftig grøn) ***************************** -->
-  <section class="bg-green-300 text-green-500 rounded-lg p-6 mb-6">
-    <Heading htmlheading="h2" size="medium">Udforsk vores juleunivers</Heading>
-    <Jul />
+  <!-- ***************************** Start Udforsk vores juleunivers ***************************** -->
+  <section class="px-[20px] md:px-[50px] lg:px-[100px]">
+    <CardCarousel
+      titel="Udforsk vores juleunivers"
+      bg="bg-red-500"
+      cards={[
+        {
+          url: "/singleview",
+          cardimage: "/img/jul1.webp",
+          cardimagealt: "Rita og Krokodille: Jul",
+          cardtitel: "Rita og Krokodille: Jul",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/jul2.webp",
+          cardimagealt: "Jagten på julemanden",
+          cardtitel: "Jagten på julemanden",
+          cardtime: "17 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/jul3.webp",
+          cardimagealt: "Cirkeline: Højt fra træets grønne top",
+          cardtitel: "Cirkeline: Højt fra træets grønne top",
+          cardtime: "14 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/jul4.webp",
+          cardimagealt: "Vitello køber en vidunderlig julegave",
+          cardtitel: "Vitello køber en vidunderlig julegave",
+          cardtime: "7 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/jul5.webp",
+          cardimagealt: "Lillefinger - Lillebror",
+          cardtitel: "Lillefinger - Lillebror",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/jul6.webp",
+          cardimagealt: "Hunden Ib 6:10 - Hunden Ib holder lillejuleaften",
+          cardtitel: "Hunden Ib 6:10 - Hunden Ib holder lillejuleaften",
+          cardtime: "4 min",
+        },
+      ]}
+    />
   </section>
   <!-- ***************************** Slut Udforsk vores juleunivers ***************************** -->
 
@@ -124,7 +168,7 @@ import CardCarousel from "../components/CardCarousel.astro";
   <section class="px-[20px] md:px-[50px] lg:px-[100px]">
     <CardCarousel
       titel="Sjov og ballade"
-      bg="bg-green-300"
+      bg="bg-orange-400"
       cards={[
         {
           url: "/singleview",
@@ -177,7 +221,7 @@ import CardCarousel from "../components/CardCarousel.astro";
   <section class="px-[20px] md:px-[50px] lg:px-[100px]">
     <CardCarousel
       titel="Mig og min familie"
-      bg="bg-green-300"
+      bg="bg-pink-300"
       cards={[
         {
           url: "/singleview",
