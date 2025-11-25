@@ -1,3 +1,97 @@
 ---
-
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
 ---
+
+<div class="relative w-full h-[600px] md:h-[650px] mb-10 overflow-visible">
+  <img
+    src="/img/herobillede.svg"
+    alt="Hero background"
+    aria-hidden="true"
+    class="absolute left-1/2 top-0 transform -translate-x-1/2 w-screen h-auto object-contain pointer-events-none"
+  />
+
+  <!-- de runde billeder i slide -->
+  <div class="absolute left-1/2 -translate-x-1/2 w-full z-30 lg:bottom-0 bottom-[300px]">
+    <div
+      class="mx-auto w-full max-w-[1100px] flex justify-start overflow-x-auto overflow-y-visible h-[160px] items-center snap-x snap-mandatory py-3 px-6 hero-slider-viewport"
+    >
+      <div class="flex items-center gap-[10px] sm:gap-[60px] hero-slider-track">
+        <img src="/img/cirkeline.png" alt="Cirkeline" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+        <img src="/img/graulv.png" alt="Graulv" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+        <img src="/img/ib.png" alt="Ib" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+        <img src="/img/lillefinger.png" alt="Lillefinger" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+        <img src="/img/rita.png" alt="Rita" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+      <img src="/img/cirkeline.png" alt="Cirkeline" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+        <img src="/img/graulv.png" alt="Graulv" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+        <img src="/img/ib.png" alt="Ib" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+        <img src="/img/lillefinger.png" alt="Lillefinger" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+        <img src="/img/rita.png" alt="Rita" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]" />
+     
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- gardinerne i siderne -->
+  <div
+    class="absolute left-1/2 top-0 transform -translate-x-1/2 w-screen z-40 pointer-events-none hidden sm:block"
+  >
+    <img
+      src="/img/gardin.png"
+      alt="Left curtain"
+      aria-hidden="true"
+      class="w-screen h-auto object-contain object-left"
+    />
+  </div>
+</div>
+
+<style>
+  
+  .hero-slider-viewport {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; /
+    scrollbar-width: none; /* Firefox: fjern scrollbar */
+  }
+
+  .hero-slider-viewport::-webkit-scrollbar {
+    display: none; /* Safari and Chrome: fjern scrollbar */
+  }
+
+  .hero-slide-item {
+    object-fit: cover;
+    display: block;
+  }
+
+  /* class applied by JS when a slide is centered */
+  .hero-slide-item.is-center {
+    transform: scale(1.28);
+  }
+  .hero-slide-item {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    border-radius: 9999px; /* make round */
+  }
+
+  @media (min-width: 640px) {
+    .hero-slider-wrapper {
+      bottom: 20px;
+    }
+    .hero-slider-track {
+      gap: 60px;
+    }
+    .hero-slide-item {
+      width: 120px;
+      height: 120px;
+    }
+    .hero-slider-viewport {
+      height: 150px;
+    }
+  }
+
+ 
+</style>
+
