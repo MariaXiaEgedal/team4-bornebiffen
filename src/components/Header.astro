@@ -2,23 +2,97 @@
 
 ---
 
-<div class="navbar bg-base-100 shadow-sm bg-red-800">
+<nav class="navbar bg-red-800 text-white px-4 lg:px-8">
+  <!-- Venstre: logo + tagline -->
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl">daisyUI</a>
+    <a class="normal-case p-0 flex items-center gap-2">
+      <!-- LOGO -->
+      <img
+        src="/img/Hvidlogo.png"
+        alt="BørneBiffen logo"
+        class="object-contain"
+      />
+    </a>
   </div>
+
+  <!-- Højre side -->
   <div class="flex-none">
-    <ul class="menu menu-horizontal px-1 text-white">
+    <!-- MOBIL: burger-menu -->
+    <div class="dropdown dropdown-end lg:hidden">
+      <label tabindex="0" class="btn btn-ghost btn-square">
+        <!-- hamburger icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </label>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-red-800 rounded-box w-40 text-sm"
+      >
+        <li><a>Alle film</a></li>
+        <li><a>Log ind</a></li>
+        <li><a>Søg</a></li>
+      </ul>
+    </div>
+
+    <!-- DESKTOP: horisontal menu -->
+    <ul class="menu menu-horizontal px-1 text-sm hidden lg:flex">
       <li><a>Alle film</a></li>
+
       <li>
-        <details>
-          <summary>Log ind</summary>
-          <ul class="bg-base-100 rounded-t-none p-2 text-white">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
-          </ul>
-        </details>
+        <a class="flex items-center gap-1">
+          <!-- lås-ikon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 11c-1.105 0-2 .895-2 2v3h4v-3c0-1.105-.895-2-2-2z"></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 11V9a5 5 0 0110 0v2M7 11h10v8H7z"></path>
+          </svg>
+          <span>Log ind</span>
+        </a>
       </li>
-      <li class="text-white"><a>Søg</a></li>
+
+      <li>
+        <a class="flex items-center gap-1">
+          <!-- søge-ikon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-4.35-4.35M5 11a6 6 0 1112 0 6 6 0 01-12 0z"></path>
+          </svg>
+          <span>Søg</span>
+        </a>
+      </li>
     </ul>
   </div>
-</div>
+</nav>
