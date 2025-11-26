@@ -13,15 +13,35 @@ const rankColorMap = {
 const rankColor = rankColorMap[rank] || "";
 ---
 
-<article class="...">
-  <a href={url} class="block">
+<article class="h-full">
+  <a href={url} class="group h-full flex flex-col">
     <div class="relative">
-      <!-- BILLEDE -->
-      <img
-        src={cardimage}
-        alt={cardimagealt}
-        class="w-full h-auto rounded-xl"
-      />
+      <!-- INDRE WRAPPER: fast mobil-højde + overflow-hidden så billede ikke skubber layout -->
+      <div class="relative overflow-hidden rounded-xl">
+        <!-- BILLEDE -->
+        <img
+          src={cardimage}
+          alt={cardimagealt}
+          class="duration-200 group-hover:scale-110"
+        />
+
+        <!-- PLAY-KNAP -->
+        <img
+          src="/img/play.svg"
+          alt="Play"
+          class="absolute top-1 right-1 md:top-2 md:right-2 w-10 h-10 md:w-14 md:h-14"
+        />
+
+        <!-- PROGRESS BAR -->
+        {
+          progress !== null && (
+            <div
+              class="absolute left-0 bottom-0 bg-red-500"
+              style={`height:10px; width:${progress}%`}
+            />
+          )
+        }
+      </div>
 
       <!-- RANK -->
       {
@@ -33,36 +53,17 @@ const rankColor = rankColorMap[rank] || "";
           </Text>
         )
       }
-
-      <!-- PLAY-KNAP -->
-      <img
-        src="/img/hvid-play.svg"
-        alt="Play"
-        class="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-14 md:h-14 z-20 pointer-events-none"
-      />
-
-      <!-- PROGRESS BAR -->
-      {
-        progress !== null && (
-          <div
-            class="absolute left-0 bottom-0 bg-red-500"
-            style={`height:10px; width:${progress}%`}
-          />
-        )
-      }
     </div>
 
-    <!-- TITEL OG TID -->
-    <div class="mt-3 md:mt-4">
-      <Heading htmlheading="h4" size="xsmall" stylingclasses="mt-3 md:mt-4"
+    <!-- TITEL OG TID: flex-column så tiden kan skubbes til bund med mt-auto -->
+    <div class="mt-3 md:mt-4 flex flex-col flex-1">
+      <Heading htmlheading="h4" size="xsmall" stylingclasses="m-0"
         >{cardtitel}
       </Heading>
 
-      <div class="mt-1 md:mt-2 flex items-center gap-[5px] md:gap-[10px]">
+      <div class="mt-auto flex items-center gap-[5px] md:gap-[10px]">
         <img src="/img/ur.svg" alt="Ur" class="w-6 h-6" />
-        <Text teksttype="brødtekst" stylingclasses="m-0 leading-none"
-          >{cardtime}</Text
-        >
+        <Text teksttype="brødtekst">{cardtime}</Text>
       </div>
     </div>
   </a>
