@@ -2,59 +2,215 @@
 
 ---
 
-<nav class="navbar bg-red-800 text-white px-4 lg:px-8">
-  <!-- Venstre: logo + tagline -->
-  <div class="flex-1">
-    <a class="normal-case p-0 flex items-center gap-2">
-      <!-- LOGO -->
-      <img
-        src="/img/Hvidlogo.png"
-        alt="BørneBiffen logo"
-        class="object-contain"
-      />
+<!-- HEADER -->
+<header class="flex items-center py-5 px-6 bg-red-800 text-white relative">
+  <!-- Logo -->
+  <a href="/" class="z-40">
+    <img
+      id="logoDesktop"
+      src="/img/Hvidlogo.png"
+      alt="Børnebiffen logo"
+      class="h-16 w-auto"
+    />
+  </a>
+
+  <!-- Desktop menu -->
+  <nav class="hidden lg:flex gap-10 ml-auto items-center text-xl">
+    <a href="#" class="hover:underline">Alle film</a>
+
+    <!-- Log ind åbner modal -->
+    <a
+      href="#"
+      data-open-login
+      class="flex items-center gap-2 hover:underline cursor-pointer"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 11c-1.105 0-2 .895-2 2v3h4v-3c0-1.105-.895-2-2-2z"></path>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M7 11V9a5 5 0 0110 0v2M7 11h10v8H7z"></path>
+      </svg>
+      Log ind
     </a>
+
+    <a href="#" class="flex items-center gap-2 hover:underline">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 21l-4.35-4.35M5 11a6 6 0 1112 0 6 6 0 01-12 0z"></path>
+      </svg>
+      Søg
+    </a>
+  </nav>
+
+  <!-- Burger (kun mobil) -->
+  <button id="burgerBtn" class="ml-auto lg:hidden z-50" aria-label="Menu">
+    <svg
+      id="burgerIcon"
+      width="34"
+      height="34"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      class="text-white"
+    >
+      <path
+        id="burgerPath"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div
+  id="mobileMenu"
+  class="fixed inset-0 bg-red-800 text-white hidden flex-col pt-8 z-40 lg:hidden"
+>
+  <div class="flex justify-between items-start px-6">
+    <img src="/img/Hvidlogo.png" alt="Børnebiffen logo" class="h-16 w-auto" />
+
+    <button id="closeMenu" class="text-white" aria-label="Luk menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-10 w-10"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
   </div>
 
-  <!-- Højre side -->
-  <div class="flex-none">
-    <!-- MOBIL: burger-menu -->
-    <div class="dropdown dropdown-end lg:hidden">
-      <label tabindex="0" class="btn btn-ghost btn-square">
-        <!-- hamburger icon -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </label>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-red-800 rounded-box w-40 text-sm"
+  <nav class="flex flex-col items-center gap-10 mt-20 text-3xl">
+    <a href="#" class="hover:underline">Alle film</a>
+
+    <a
+      href="#"
+      data-open-login
+      class="flex items-center gap-3 justify-center hover:underline cursor-pointer"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
       >
-        <li><a>Alle film</a></li>
-        <li><a>Log ind</a></li>
-        <li><a>Søg</a></li>
-      </ul>
-    </div>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 11c-1.105 0-2 .895-2 2v3h4v-3c0-1.105-.895-2-2-2z"></path>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M7 11V9a5 5 0 0110 0v2M7 11h10v8H7z"></path>
+      </svg>
+      Log ind
+    </a>
 
-    <!-- DESKTOP: horisontal menu -->
-    <ul class="menu menu-horizontal px-1 text-sm hidden lg:flex">
-      <li><a>Alle film</a></li>
+    <a href="#" class="flex items-center gap-3 justify-center hover:underline">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 21l-4.35-4.35M5 11a6 6 0 1112 0 6 6 0 01-12 0z"></path>
+      </svg>
+      Søg
+    </a>
+  </nav>
+</div>
 
-      <li>
-        <a class="flex items-center gap-1">
-          <!-- lås-ikon -->
+<!-- LOGIN MODAL -->
+<div
+  id="loginModalOverlay"
+  class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden justify-center items-center z-50"
+>
+  <div
+    class="bg-white rounded-3xl border-4 border-blue-400
+           p-6 sm:p-7
+           w-[90%] max-w-md sm:max-w-lg
+           relative"
+  >
+    <!-- Luk-knap -->
+    <button
+      id="closeLoginModal"
+      class="absolute top-4 right-4 text-blue-400 hover:text-blue-600 transition"
+      aria-label="Luk login"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-8 h-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Indhold -->
+    <div class="grid grid-cols-2 gap-5 items-center">
+      <!-- Tekst + knap -->
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-blue-400 mb-3">
+          Log ind
+        </h2>
+
+        <p class="text-base sm:text-lg text-black leading-snug mb-5">
+          Brug dit bibliotekslogin <br />
+          til at se alle vores film.
+        </p>
+
+        <!-- Kun UI, ingen funktion -->
+        <button
+          class="inline-flex items-center gap-2 bg-blue-400 hover:bg-blue-500
+                 text-black font-bold rounded-full px-5 py-3 text-base sm:text-lg
+                 transition"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
+            class="h-5 w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -70,29 +226,117 @@
               stroke-width="2"
               d="M7 11V9a5 5 0 0110 0v2M7 11h10v8H7z"></path>
           </svg>
-          <span>Log ind</span>
-        </a>
-      </li>
+          Log ind
+        </button>
+      </div>
 
-      <li>
-        <a class="flex items-center gap-1">
-          <!-- søge-ikon -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-4.35-4.35M5 11a6 6 0 1112 0 6 6 0 01-12 0z"></path>
-          </svg>
-          <span>Søg</span>
-        </a>
-      </li>
-    </ul>
+      <!-- Bjørnen -->
+      <div class="flex justify-center">
+        <img
+          src="/img/logindbamse.webp"
+          alt="Bamse med popcorn"
+          class="w-28 sm:w-32 md:w-36"
+        />
+      </div>
+    </div>
   </div>
-</nav>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  // --- BURGERMENU ---
+
+  const burgerBtn = document.getElementById("burgerBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const burgerPath = document.getElementById("burgerPath");
+  const closeMenuBtn = document.getElementById("closeMenu");
+  let menuOpen = false;
+
+  function openMenu() {
+    menuOpen = true;
+    mobileMenu.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+    // skift til kryds
+    burgerPath.setAttribute("d", "M6 18L18 6M6 6l12 12");
+  }
+
+  function closeMenu() {
+    menuOpen = false;
+    mobileMenu.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+    // skift tilbage til burger
+    burgerPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
+  }
+
+  if (burgerBtn) {
+    burgerBtn.addEventListener("click", function () {
+      if (menuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
+
+  if (closeMenuBtn) {
+    closeMenuBtn.addEventListener("click", function () {
+      closeMenu();
+    });
+  }
+
+  if (mobileMenu) {
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeMenu();
+      });
+    });
+  }
+
+  // --- LOGIN-MODAL ---
+
+  const loginModalOverlay = document.getElementById("loginModalOverlay");
+  const closeLoginModalBtn = document.getElementById("closeLoginModal");
+  const loginTriggers = document.querySelectorAll("[data-open-login]");
+
+  function openLoginModal(event) {
+    if (event) event.preventDefault();
+
+    // hvis mobilmenuen er åben, luk den først
+    if (menuOpen) {
+      closeMenu();
+    }
+
+    if (loginModalOverlay) {
+      loginModalOverlay.classList.remove("hidden");
+      loginModalOverlay.classList.add("flex");
+      document.body.classList.add("overflow-hidden");
+    }
+  }
+
+  function closeLoginModal() {
+    if (loginModalOverlay) {
+      loginModalOverlay.classList.add("hidden");
+      loginModalOverlay.classList.remove("flex");
+      document.body.classList.remove("overflow-hidden");
+    }
+  }
+
+  loginTriggers.forEach(function (trigger) {
+    trigger.addEventListener("click", openLoginModal);
+  });
+
+  if (closeLoginModalBtn) {
+    closeLoginModalBtn.addEventListener("click", function () {
+      closeLoginModal();
+    });
+  }
+
+  if (loginModalOverlay) {
+    loginModalOverlay.addEventListener("click", function (event) {
+      if (event.target === loginModalOverlay) {
+        closeLoginModal();
+      }
+    });
+  }
+</script>
