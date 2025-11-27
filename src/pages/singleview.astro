@@ -1,23 +1,246 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import SingleCard from "../components/SingleCard.astro";
-import Serien from "../components/Serien.astro";
-import Minder from "../components/Minder.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import CardCarousel from "../components/CardCarousel.astro";
+
+const {
+  hero = "/img/ritahero.png",
+  avatar = "/img/rita.png",
+  titel = "Rita og Krokodille: Skovturen",
+  alder = "Tilladt for alle",
+  tid = "5 min",
+  beskrivelse = `Vennerne skal ud og samle kastanjer i skoven. Rita formaner Krokodille at blive på stien, så han ikke farer vild. Men da hun ser et helt tæppe af glitrende kastanjer glemmer hun alt, hvad hun har sagt. I jagten på de flotte kastanjer glemmer hun alt om stien og farer vild. Krokodille hjælper hende at finde tilbage.`,
+  instruktør = "Instruktør: Siri Melchior (Danmark, 2013)",
+  emner = "Emner: Fantasivenner, Venskab, Skovture, Fare vild",
+} = Astro.props;
 ---
 
-<MainLayout title="Børnebiffen">
-  <!-- /*************************************************/ singlecard /*************************************************/ -->
+<MainLayout title="Børnebiffen-Singleview">
+  <!-- /*************************************************/ Start singlecard /*************************************************/ -->
   <section class="pt-[40px] md:pt-[85px]">
-    <SingleCard />
-  </section>
+    <div
+      class="absolute left-[20px] top-[130px] md:left-[50px] md:top-[140px] lg:left-[100px] z-30"
+    >
+      <a href="/">
+        <img
+          src="/img/tilbage.svg"
+          alt="Tilbage"
+          class="w-8 h-8 md:w-10 md:h-10 transition-transform duration-200 ease-in-out hover:scale-110 cursor-pointer"
+        />
+      </a>
+    </div>
+    <div class="mt-10 mx-5 md:mx-[50px] lg:mx-[100px]">
+      <div class="relative rounded-[20px] overflow-hidden group">
+        <img
+          src={hero}
+          alt="hero billede"
+          class="w-full object-cover h-[360px] md:h-[520px] lg:h-[600px]"
+        />
 
-  <!-- /*************************************************/ serien /*************************************************/ -->
-  <section class="pt-[40px] md:pt-[80px]">
-    <Serien />
+        <img
+          src="/img/play.svg"
+          alt="Play"
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-25 md:h-25 z-20 transition-transform duration-300 ease-in-out transform hover:scale-110 cursor-pointer"
+        />
+
+        <div class="absolute left-6 bottom-6 flex items-end gap-4">
+          <img
+            src={avatar}
+            alt="avatar"
+            class="w-25 h-25 md:w-60 md:h-60 object-cover"
+          />
+
+          <div class="text-white">
+            <Heading
+              htmlheading="h1"
+              size="medium"
+              stylingclasses="text-orange-400 m-2"
+            >
+              {titel}
+            </Heading>
+
+            <div
+              class="flex items-center gap-4 mt-2 text-white text-sm opacity-95"
+            >
+              <Heading
+                htmlheading="h3"
+                size="xsmall"
+                stylingclasses="flex items-center gap-2 px-3 py-1 rounded-full"
+              >
+                {alder}
+              </Heading>
+              <Heading
+                htmlheading="h3"
+                size="xsmall"
+                stylingclasses="flex items-center gap-2 px-3 py-1 rounded-full"
+              >
+                <img
+                  src="/img/ur-hvid.svg"
+                  alt="Ur"
+                  class="w-4 h-4 md:w-5 md:h-5 mr-2"
+                />
+                {tid}
+              </Heading>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-pink-300 rounded-[20px] py-[20px] md:py-[40px] px-[20px] md:px-[50px] lg:px-[100px] text-black grid grid-cols-1 md:grid-cols-12 gap-4 mt-[20px]"
+      >
+        <div class="md:col-span-6">
+          <Heading
+            htmlheading="h3"
+            size="small"
+            stylingclasses="font-nunito font-bold text-lg mb-2">{titel}</Heading
+          >
+          <Text teksttype="brødtekst" stylingclasses="text-sm leading-relaxed"
+            >{beskrivelse}</Text
+          >
+        </div>
+
+        <div class="text-sm md:col-span-6">
+          <Text teksttype="fedbrødtekst">{instruktør}</Text>
+          <Text teksttype="brødtekst" stylingclasses="mt-2">{emner}</Text>
+        </div>
+      </div>
+    </div>
   </section>
+  <!-- /*************************************************/ Slut singlecard /*************************************************/ -->
+
+  <!-- ***************************** Start Serien: Rita og Krokodille ***************************** -->
+  <section class="px-[20px] md:px-[50px] lg:px-[100px] pt-[40px] md:pt-[80px]">
+    <CardCarousel
+      titel="Serien: Rita og Krokodille"
+      bg="bg-blue-400"
+      cards={[
+        {
+          url: "/singleview",
+          cardimage: "/img/rita1.webp",
+          cardimagealt: "Rita og Krokodille: Skovturen",
+          cardtitel: "Rita og Krokodille: Skovturen",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/rita2.webp",
+          cardimagealt: "Rita og Krokodille: Blåbær",
+          cardtitel: "Rita og Krokodille: Blåbær",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/rita3.webp",
+          cardimagealt: "Rita og Krokodille: Forår",
+          cardtitel: "Rita og Krokodille: Forår",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/rita4.webp",
+          cardimagealt: "Rita og Krokodille: Fisketuren",
+          cardtitel: "Rita og Krokodille: Fisketuren",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/rita5.webp",
+          cardimagealt: "Rita og Krokodille: Halloween",
+          cardtitel: "Rita og Krokodille: Halloween",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/rita6.webp",
+          cardimagealt: "Rita og Krokodille: Camping",
+          cardtitel: "Rita og Krokodille: Camping",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/rita7.webp",
+          cardimagealt: "Rita og Krokodille: Snevejr",
+          cardtitel: "Rita og Krokodille: Snevejr",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/rita8.webp",
+          cardimagealt: "Rita og Krokodille: I Biografen",
+          cardtitel: "Rita og Krokodille: I Biografen",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/rita9.webp",
+          cardimagealt: "Rita og Krokodille: Nat",
+          cardtitel: "Rita og Krokodille: Nat",
+          cardtime: "5 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/rita10.webp",
+          cardimagealt: "Rita og Krokodille: Pindsvinet",
+          cardtitel: "Rita og Krokodille: Pindsvinet",
+          cardtime: "5 min",
+        },
+      ]}
+    />
+  </section>
+  <!-- ***************************** Slut Serien: Rita og Krokodille ***************************** -->
 
   <!-- /*************************************************/ Start Minder om /*************************************************/ -->
-  <section class="py-[40px] md:py-[80px]">
-    <Minder />
+  <section class="px-[20px] md:px-[50px] lg:px-[100px] py-[40px] md:py-[80px]">
+    <CardCarousel
+      titel="Minder om"
+      bg="bg-orange-400"
+      cards={[
+        {
+          url: "/singleview",
+          cardimage: "/img/minder-om1.webp",
+          cardimagealt: "Krokodillys",
+          cardtitel: "Krokodillys",
+          cardtime: "6 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/minder-om2.webp",
+          cardimagealt: "Ville og Vilde Kanin",
+          cardtitel: "Ville og Vilde Kanin",
+          cardtime: "29 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/minder-om3.webp",
+          cardimagealt: "Godbid",
+          cardtitel: "Godbid",
+          cardtime: "1 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/minder-om4.webp",
+          cardimagealt: "Zebra",
+          cardtitel: "Zebra",
+          cardtime: "3 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/minder-om5.webp",
+          cardimagealt: "Krokodille",
+          cardtitel: "Krokodille",
+          cardtime: "4 min",
+        },
+        {
+          url: "/singleview",
+          cardimage: "/img/minder-om6.webp",
+          cardimagealt: "Den lange rejse",
+          cardtitel: "Den lange rejse",
+          cardtime: "30 min",
+        },
+      ]}
+    />
   </section>
+  <!-- /*************************************************/ Slut Minder om /*************************************************/ -->
 </MainLayout>
