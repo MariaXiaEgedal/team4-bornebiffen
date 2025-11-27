@@ -5,8 +5,6 @@ import Link from "../components/Link.astro";
 import Text from "../components/Text.astro";
 import Heading from "../components/Heading.astro";
 import Hero from "../components/Hero.astro";
-import Video from "../components/Video.astro";
-import App from "../components/App.astro";
 import Card from "../components/Card.astro";
 import CardCarousel from "../components/CardCarousel.astro";
 ---
@@ -141,9 +139,47 @@ import CardCarousel from "../components/CardCarousel.astro";
   </section>
   <!-- ***************************** Slut Udforsk vores juleunivers ***************************** -->
 
-  <!-- ***************************** Start Video (kraftig cyan) ***************************** -->
-  <section class="pt-[40px] md:pt-[80px]">
-    <Video />
+  <!-- ***************************** Start Video ***************************** -->
+  <section class="pt-[40px] md:pt-[80px] px-0 md:px-[50px] lg:px-[100px]">
+    <div class="w-full box-border">
+      <div
+        class="relative w-full md:overflow-hidden md:rounded-[20px] lg:rounded-[20px]"
+      >
+        <video
+          class="w-full h-auto block"
+          src="/img/ritavideo.mov"
+          autoplay
+          loop
+          playsinline
+          muted></video>
+
+        <div
+          class="absolute z-10 pointer-events-none
+                 top-4 left-4 md:top-6 md:left-6 lg:top-8 lg:left-8
+                 flex flex-col items-start gap-6 md:gap-5 lg:gap-8"
+        >
+          <Heading
+            htmlheading="h2"
+            size="medium"
+            stylingclasses="text-[var(--redtext)]"
+          >
+            Rita og krokodillen
+          </Heading>
+
+          <a
+            href="/singleview"
+            class="pointer-events-auto inline-block"
+            aria-label="Åbn single view"
+          >
+            <img
+              src="/img/playbutton.svg"
+              alt="afspil"
+              class="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 justify-self-start transition-transform duration-200 ease-out hover:scale-110 active:scale-95"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- ***************************** Slut Video ***************************** -->
 
@@ -307,7 +343,7 @@ import CardCarousel from "../components/CardCarousel.astro";
   </section>
   <!-- ***************************** Slut Mig og min familie ***************************** -->
 
-  <!-- ***************************** Start Billede (kraftig lilla) ***************************** -->
+  <!-- ***************************** Start Billede ***************************** -->
   <section
     class="flex items-center justify-center px-[20px] md:px-[100px] pt-[40px] md:pt-[80px]"
   >
@@ -315,10 +351,68 @@ import CardCarousel from "../components/CardCarousel.astro";
   </section>
   <!-- ***************************** Slut Billede Sektion ***************************** -->
 
-  <!-- ***************************** Start App Sektion (kraftig pink) ***************************** -->
-  <section class="bg-pink-400 py-[40px] md:py-[80px]">
-    <p>App</p>
-    <App />
+  <!-- ***************************** Start App Sektion ***************************** -->
+  <section
+    class="my-[40px] md:my-[80px] px-[20px] md:px-[50px] lg:px-[100px] py-[40px] md:py-[80px] w-full bg-[var(--color-green-300)]"
+  >
+    <div
+      class="md:px-[50px] lg:px-[100px] flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12"
+    >
+      <!-- BILLEDE -->
+      <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+        <img
+          src="/img/appbillede.svg"
+          alt="Børnebiffen app på telefon og tablet"
+          class="w-full max-w-sm lg:max-w-md drop-shadow-lg"
+        />
+      </div>
+
+      <!-- TEKST -->
+      <div class="order-2 lg:order-1 text-[var(--base-black)]">
+        <Text teksttype="fedbrødtekst" stylingclasses="mb-5">
+          Hent Børnebiffen-appen og se film med de yngste</Text
+        >
+
+        <Text teksttype="brødtekst" stylingclasses="mb-5">
+          Download Børnebiffen-appen i din app store, og få adgang til vores
+          udvalg af trygge og håndplukkede kortfilm til børn i alderen 2-6 år.</Text
+        >
+
+        <Text teksttype="brødtekst" stylingclasses="mb-5">
+          Appen er udviklet til både smartphones og tablets, så børn og voksne
+          nemt kan se film sammen.</Text
+        >
+
+        <Text teksttype="brødtekst" stylingclass="">
+          Du kan hente appen til både Android og iOS.</Text
+        >
+
+        <!-- APP STORE-BADGES -->
+        <div class="flex flex-row flex-wrap gap-4 mt-5">
+          <a
+            href="#"
+            class="inline-block transition-transform duration-200 hover:scale-105"
+          >
+            <img
+              src="/img/appstoreknap.svg"
+              alt="Hent i App Store"
+              class="h-12 lg:h-14 w-auto"
+            />
+          </a>
+
+          <a
+            href="#"
+            class="inline-block transition-transform duration-200 hover:scale-105"
+          >
+            <img
+              src="/img/googleplayknap.svg"
+              alt="Get it on Google Play"
+              class="h-12 lg:h-14 w-auto"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- ***************************** Slut App Sektion ***************************** -->
 </MainLayout>

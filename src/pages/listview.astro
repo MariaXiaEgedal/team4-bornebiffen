@@ -1,15 +1,26 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
-import SogeFelt from "../components/SogeFelt.astro";
 import Text from "../components/Text.astro";
 import Heading from "../components/Heading.astro";
 import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Børnebiffen-Listevisning">
+  <div
+    class="absolute left-[20px] top-[130px] md:left-[50px] md:top-[140px] lg:left-[100px] z-30"
+  >
+    <a href="/">
+      <img
+        src="/img/tilbage.svg"
+        alt="Tilbage"
+        class="w-8 h-8 md:w-10 md:h-10 transition-transform duration-200 ease-in-out hover:scale-110 cursor-pointer"
+      />
+    </a>
+  </div>
+
   <!-- /*************************************************/ Sart Søge felt /*************************************************/ -->
-  <section class="pt-[40px] md:pt-[80px]">
+  <section class="pt-[40px] md:pt-[80px] mt-[40px] md:mt-[20px]">
     <div class="max-w-[900px] mx-auto px-[20px]">
       <div class="relative">
         <img
@@ -23,35 +34,18 @@ import Card from "../components/Card.astro";
           name="search"
           type="search"
           placeholder=" "
-          class="w-full rounded-[20px] border-2 border-purple-900 px-12 py-4 focus:ring-3 focus:ring-purple-300"
+          class="peer w-full rounded-[20px] border-2 border-purple-900 px-12 py-4 placeholder-transparent focus:ring-3 focus:ring-purple-300"
         />
 
         <Text
           teksttype="brødtekst"
-          stylingclasses="absolute left-12 top-1/2 -translate-y-1/2 text-gray-400"
+          stylingclasses="absolute left-12 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400 transition-opacity duration-150 opacity-0 peer-placeholder-shown:opacity-100"
         >
           Søg efter film her
         </Text>
       </div>
     </div>
   </section>
-
-  <style>
-    /* vis Text kun når input er tom; skjul ved fokus eller når input har værdi */
-    input::placeholder {
-      color: transparent;
-    }
-    input:placeholder-shown + .placeholder-text {
-      opacity: 1;
-    }
-    input:not(:placeholder-shown) + .placeholder-text,
-    input:focus + .placeholder-text {
-      opacity: 0;
-    }
-    .placeholder-text {
-      transition: opacity 0.15s ease;
-    }
-  </style>
   <!-- /*************************************************/ Slut Søge felt /*************************************************/ -->
 
   <!-- /*************************************************/ Start Alder /*************************************************/ -->
