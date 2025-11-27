@@ -1,25 +1,95 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
-import Hero from "../components/Hero.astro";
 import SogeFelt from "../components/SogeFelt.astro";
-import Link from "../components/Link.astro";
 import Text from "../components/Text.astro";
 import Heading from "../components/Heading.astro";
-import Alder from "../components/Alder.astro";
 import Card from "../components/Card.astro";
 ---
 
-<MainLayout title="Børnebiffen">
+<MainLayout title="Børnebiffen-Listevisning">
   <!-- /*************************************************/ Sart Søge felt /*************************************************/ -->
-  <section id="sogefelt">
-    <SogeFelt />
+  <section class="pt-[40px] md:pt-[80px]">
+    <div class="max-w-[900px] mx-auto px-[20px]">
+      <div class="relative">
+        <img
+          src="/img/lillasøge.svg"
+          alt="Lilla søgeikon"
+          class="absolute left-4 top-1/2 -translate-y-1/2"
+        />
+
+        <input
+          id="search"
+          name="search"
+          type="search"
+          placeholder=" "
+          class="w-full rounded-[20px] border-2 border-purple-900 px-12 py-4 focus:ring-3 focus:ring-purple-300"
+        />
+
+        <Text
+          teksttype="brødtekst"
+          stylingclasses="absolute left-12 top-1/2 -translate-y-1/2 text-gray-400"
+        >
+          Søg efter film her
+        </Text>
+      </div>
+    </div>
   </section>
+
+  <style>
+    /* vis Text kun når input er tom; skjul ved fokus eller når input har værdi */
+    input::placeholder {
+      color: transparent;
+    }
+    input:placeholder-shown + .placeholder-text {
+      opacity: 1;
+    }
+    input:not(:placeholder-shown) + .placeholder-text,
+    input:focus + .placeholder-text {
+      opacity: 0;
+    }
+    .placeholder-text {
+      transition: opacity 0.15s ease;
+    }
+  </style>
   <!-- /*************************************************/ Slut Søge felt /*************************************************/ -->
 
   <!-- /*************************************************/ Start Alder /*************************************************/ -->
-  <section id="alder">
-    <Alder />
+  <section class="text-center pt-[40px] md:pt-[80px]">
+    <Heading htmlheading="h2" size="medium">Filtré med alder</Heading>
+
+    <div class="mt-[20px] md:mt-[20px] flex justify-center gap-6">
+      <div class="relative group w-[80px] md:w-[160px]">
+        <img src="/img/lillebjørn.svg" alt="Lillebjørn" class="w-full block" />
+        <img
+          src="/img/hoverlillebjørn.svg"
+          alt=""
+          class="absolute inset-0 w-full opacity-0 duration-300 group-hover:opacity-100"
+        />
+      </div>
+
+      <div class="relative group w-[80px] md:w-[160px]">
+        <img
+          src="/img/mellembjørn.svg"
+          alt="Mellembjørn"
+          class="w-full block"
+        />
+        <img
+          src="/img/hovermellembjørn.svg"
+          alt=""
+          class="absolute inset-0 w-full opacity-0 duration-300 group-hover:opacity-100"
+        />
+      </div>
+
+      <div class="relative group w-[80px] md:w-[160px]">
+        <img src="/img/storebjørn.svg" alt="Storebjørn" class="w-full block" />
+        <img
+          src="/img/hoverstorebjørn.svg"
+          alt=""
+          class="absolute inset-0 w-full opacity-0 duration-300 group-hover:opacity-100"
+        />
+      </div>
+    </div>
   </section>
   <!-- /*************************************************/ Slut Alder /*************************************************/ -->
 
