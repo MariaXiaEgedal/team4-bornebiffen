@@ -3,85 +3,67 @@
 ---
 
 <div>
-  <!-- Desktop -->
-  <img
-    src="/img/footer.svg"
-    alt="Footer decorative"
-    class="hidden sm:block w-full -mb-40"
-    aria-hidden="true"
-  />
-  <!-- Mobile-->
+  <!-- Decorative images: mobile/tablet use mobile image, desktop shows large image -->
   <img
     src="/img/footermobil.svg"
     alt="Footer decorative mobile"
-    class="block sm:hidden w-full -mb-6"
+    class="block lg:hidden w-full -mb-6"
+    aria-hidden="true"
+  />
+  <img
+    src="/img/footer.svg"
+    alt="Footer decorative"
+    class="hidden lg:block w-full -mb-40"
     aria-hidden="true"
   />
 
   <footer
-    class="footer sm:footer-horizontal bg-base-200 text-base-content py-10 px-[20px] sm:px-[100px] relative z-10"
+    class="footer lg:footer-horizontal bg-[var(--color-grey-50)] text-base-content py-10 px-4 md:px-8 lg:px-[100px] relative z-10 text-[16px] md:text-[20px] font-nunito"
   >
-    <!-- DESKTOP / 4-kolonner footer -->
-    <div class="hidden sm:flex w-full sm:gap-[138px]">
-      <aside class="flex-1">
+    <!-- Responsive grid: mobile/tablet = 2 cols (left/right), desktop = 4 cols -->
+    <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-[138px]">
+      <!-- Logo / Branding -->
+      <div
+        class="flex items-start col-start-1 row-start-1 lg:col-start-1 lg:row-start-auto"
+      >
         <img
           src="/img/bornebiffenlogo.svg"
           alt="BørneBiffen logo"
-          class="object-contain"
+          class="w-24 h-auto object-contain"
         />
-      </aside>
-      <nav class="flex-1" aria-label="Om Børnebiffen">
-        <ul class="flex flex-col sm:space-y-[10px]">
+      </div>
+
+      <!-- About links -->
+      <nav
+        aria-label="Om Børnebiffen"
+        class="col-start-1 row-start-2 lg:col-start-2 lg:row-start-auto"
+      >
+        <ul class="flex flex-col space-y-2">
           <li><a class="link link-hover">Om Børnebiffen</a></li>
           <li><a class="link link-hover">Tilgængelighedserklæring</a></li>
         </ul>
       </nav>
 
-      <nav class="flex-1" aria-label="Kontakt og politikker">
-        <ul class="flex flex-col sm:space-y-[10px]">
+      <!-- Contact & Policies -->
+      <nav
+        aria-label="Kontakt og politikker"
+        class="col-start-2 row-start-1 lg:col-start-3 lg:row-start-auto"
+      >
+        <ul class="flex flex-col space-y-2">
           <li><a class="link link-hover">Kontakt os</a></li>
           <li><a class="link link-hover">Cookies</a></li>
           <li><a class="link link-hover">Privatlivspolitik</a></li>
         </ul>
       </nav>
 
-      <address class="flex-1 not-italic flex flex-col sm:space-y-[10px]">
-        <span>DBC DIGITAL A/S</span>
-        <span>Tempovej 7-11</span>
-        <span>2750 Ballerup</span>
+      <!-- Address -->
+      <address
+        class="not-italic col-start-2 row-start-2 lg:col-start-4 lg:row-start-auto"
+      >
+        <div>DBC DIGITAL A/S</div>
+        <div>Tempovej 7-11</div>
+        <div>2750 Ballerup</div>
       </address>
-    </div>
-
-    <!-- MOBILE: 2 kolonner layout -->
-    <div class="sm:hidden w-full grid grid-cols-2 gap-6">
-      <div class="flex flex-col items-start">
-        <img
-          src="/images/bornebiffenlogo.svg"
-          alt="BørneBiffen logo"
-          class="w-20 h-20 object-contain"
-        />
-        <address class="mt-3 text-sm not-italic">
-          <div>DBC DIGITAL A/S</div>
-          <div>Tempovej 7-11</div>
-          <div>2750 Ballerup</div>
-        </address>
-      </div>
-
-      <div>
-        <nav class="mb-4 text-sm" aria-label="Om Børnebiffen">
-          <ul class="flex flex-col space-y-2">
-            <li><a class="link link-hover">Om Børnebiffen</a></li>
-            <li><a class="link link-hover">Tilgængelighedserklæring</a></li>
-          </ul>
-        </nav>
-        <nav class="text-sm" aria-label="Kontakt og politikker">
-          <ul class="flex flex-col space-y-2">
-            <li><a class="link link-hover">Kontakt os</a></li>
-            <li><a class="link link-hover">Cookies</a></li>
-            <li><a class="link link-hover">Privatlivspolitik</a></li>
-          </ul>
-        </nav>
-      </div>
     </div>
   </footer>
 </div>

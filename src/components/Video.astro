@@ -2,10 +2,12 @@
 import Heading from "./Heading.astro";
 ---
 
-<div class="w-full box-border mt-4 mb-4 px-0 md:px-[100px]">
-  <div class="relative w-full">
+<div class="w-full box-border mt-4 mb-4 px-0 md:px-[50px] lg:px-[100px]">
+  <div
+    class="relative w-full md:overflow-hidden md:rounded-[20px] lg:rounded-[20px]"
+  >
     <video
-      class="w-full h-auto block md:rounded-md"
+      class="w-full h-auto block"
       src="/img/ritavideo.mov"
       autoplay
       loop
@@ -13,7 +15,9 @@ import Heading from "./Heading.astro";
       muted></video>
 
     <div
-      class="absolute top-4 left-4 md:top-6 md:left-6 z-10 flex flex-col gap-2 md:gap-3 items-start pointer-events-none"
+      class="absolute z-10 pointer-events-none
+                 top-4 left-4 md:top-6 md:left-6 lg:top-8 lg:left-8
+                 grid grid-cols-1 items-start gap-3 md:gap-3 lg:gap-6"
     >
       <Heading
         htmlheading="h2"
@@ -22,13 +26,18 @@ import Heading from "./Heading.astro";
       >
         Rita og krokodillen
       </Heading>
-      <button class="pointer-events-auto flex items-center justify-center">
+
+      <a
+        href="/singleview"
+        class="pointer-events-auto inline-block"
+        aria-label="Åbn single view"
+      >
         <img
           src="/img/playbutton.svg"
           alt="afspil"
-          class="w-9 h-9 md:w-20 md:h-20 md:mt-15"
+          class="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 justify-self-start transition-transform duration-200 ease-out hover:scale-110 active:scale-95"
         />
-      </button>
+      </a>
     </div>
   </div>
 </div>
