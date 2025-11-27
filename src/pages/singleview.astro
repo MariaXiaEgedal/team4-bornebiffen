@@ -17,22 +17,34 @@ const {
 ---
 
 <MainLayout title="Børnebiffen-Singleview">
-  <img src="" alt="" />
+  <!-- BOBLER -->
+  <div class="w-full overflow-hidden">
+    <img
+      src="/img/bobler.svg"
+      alt=""
+      class="hidden md:block w-full h-auto object-cover"
+    />
+    <img
+      src="/img/boblermobil.svg"
+      alt=""
+      class="block md:hidden w-full h-auto object-cover"
+    />
+  </div>
+
+  <!-- TILBAGE KNAP -->
+  <div class="pt-[20px] md:pt-[40px] px-[20px] md:px-[50px] lg:px-[100px]">
+    <a href="/">
+      <img
+        src="/img/tilbage.svg"
+        alt="Tilbage"
+        class="w-8 h-8 md:w-10 md:h-10 transition-transform duration-200 ease-in-out hover:scale-110 cursor-pointer"
+      />
+    </a>
+  </div>
 
   <!-- /*************************************************/ Start singlecard /*************************************************/ -->
-  <section class="pt-[40px] md:pt-[85px]">
-    <div
-      class="absolute left-[20px] top-[130px] md:left-[50px] md:top-[140px] lg:left-[100px] z-30"
-    >
-      <a href="/">
-        <img
-          src="/img/tilbage.svg"
-          alt="Tilbage"
-          class="w-8 h-8 md:w-10 md:h-10 transition-transform duration-200 ease-in-out hover:scale-110 cursor-pointer"
-        />
-      </a>
-    </div>
-    <div class="mt-10 mx-5 md:mx-[50px] lg:mx-[100px]">
+  <section class="pt-[20px] md:pt-[40px]">
+    <div class="mx-5 md:mx-[50px] lg:mx-[100px]">
       <div class="relative rounded-[20px] overflow-hidden group">
         <img
           src={hero}
