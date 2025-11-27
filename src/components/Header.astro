@@ -13,7 +13,7 @@ import Heading from "../components/Heading.astro";
 
   <!-- Desktop menu -->
   <nav class="hidden lg:flex gap-10 ml-auto items-center text-xl">
-    <a href="#" class="hover:underline">Alle film</a>
+    <a href="/listview" class="hover:underline">Alle film</a>
     <a
       href="#"
       data-open-login
@@ -22,13 +22,13 @@ import Heading from "../components/Heading.astro";
       <img src="/img/lock.svg" alt="lockicon" class="h-5 w-auto" />
       Log ind
     </a>
-    <a href="#" class="flex items-center gap-2 hover:underline">
+    <a href="/listview" class="flex items-center gap-2 hover:underline">
       <img src="/img/loop.svg" alt="loopicon" class="h-5 w-auto" />
       Søg
     </a>
   </nav>
 
-  <!-- Burger menu -->
+  <!-- Burger menu i -->
   <button
     id="burgerBtn"
     class="ml-auto lg:hidden z-50 flex flex-col items-center gap-1.5 w-9 h-9"
@@ -45,16 +45,16 @@ import Heading from "../components/Heading.astro";
   </button>
 </header>
 
-<!-- Mobil menu -->
+<!-- drop down Mobil menu -->
 <div
   id="mobileMenu"
-  class="fixed inset-0 bg-[var(--color-red-700)] text-[var(--base-white)] hidden flex-col pt-8 z-40 lg:hidden"
+  class="fixed inset-x-0 top-0 bg-[var(--color-red-700)] text-[var(--base-white)] -translate-y-full transform transition-transform duration-500 ease-in-out flex flex-col pt-8 z-42 lg:hidden h-[75vh] overflow-y-auto"
 >
   <div class="flex justify-between items-start px-6">
     <img src="/img/hvidlogo.svg" alt="Børnebiffen logo" class="h-16 w-auto" />
   </div>
   <nav class="flex flex-col items-center gap-10 mt-20 text-3xl">
-    <a href="#" class="hover:underline">Alle film</a>
+    <a href="/listview" class="hover:underline">Alle film</a>
     <a
       href="#"
       data-open-login
@@ -63,7 +63,7 @@ import Heading from "../components/Heading.astro";
       <img src="/img/lock.svg" alt="lockicon" class="h-6 w-auto" />
       Log ind
     </a>
-    <a href="#" class="flex items-center gap-3 hover:underline">
+    <a href="/listview" class="flex items-center gap-3 hover:underline">
       <img src="/img/loop.svg" alt="loopicon" class="h-6 w-auto" />
       Søg
     </a>
@@ -83,54 +83,35 @@ import Heading from "../components/Heading.astro";
       class="absolute top-4 right-4 text-[var(--primary-blue)] hover:text-[var(--color-blue-700)] transition"
       aria-label="Luk login"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-8 h-8"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
+      <img
+        src="/img/blaakryds.svg"
+        alt="Luk"
+        class="w-8 h-8 transition-transform duration-300 hover:scale-150"
+      />
     </button>
     <div class="grid grid-cols-2 gap-3 sm:gap-5 items-center">
       <div>
+        <!-- Brug Heading-komponenten -->
         <Heading
           htmlheading="h4"
           size="medium"
-          stylingclasses="text-[var(--primary-blue)] mb-3">Log ind</Heading
+          stylingclasses="text-[var(--primary-blue)] mb-3"
         >
+          Log ind
+        </Heading>
+
+        <!-- Brug Text-komponenten -->
         <Text
           teksttype="brødtekst"
           stylingclasses="text-base sm:text-lg text-[var(--base-black)] mb-5 leading-snug"
         >
           Brug dit bibliotekslogin <br /> til at se alle vores film.
         </Text>
+
         <button
           class="inline-flex items-center gap-2 bg-[var(--primary-blue)] hover:bg-[var(--color-blue-700)] text-[var(--base-black)] font-bold rounded-xl px-4 py-3 text-sm sm:text-lg transition"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 11c-1.105 0-2 .895-2 2v3h4v-3c0-1.105-.895-2-2-2z"></path>
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M7 11V9a5 5 0 0110 0v2M7 11h10v8H7z"></path>
-          </svg>
+          <img src="/img/blacklock.svg" alt="lockicon" class="h-5 w-auto" />
           Log ind
         </button>
       </div>
@@ -144,7 +125,6 @@ import Heading from "../components/Heading.astro";
     </div>
   </div>
 </div>
-
 <script>
   // Funktion til at toggle klasser
   const toggleClass = (element, className, condition) => {
@@ -156,8 +136,9 @@ import Heading from "../components/Heading.astro";
   const mobileMenu = document.getElementById("mobileMenu");
 
   burgerBtn?.addEventListener("click", () => {
-    const menuOpen = !mobileMenu.classList.contains("hidden");
-    toggleClass(mobileMenu, "hidden", menuOpen);
+    const menuOpen = mobileMenu.classList.contains("translate-y-0");
+    toggleClass(mobileMenu, "-translate-y-full", menuOpen);
+    toggleClass(mobileMenu, "translate-y-0", !menuOpen);
     toggleClass(document.body, "overflow-hidden", !menuOpen);
 
     // Animér burger-menuen
@@ -179,6 +160,7 @@ import Heading from "../components/Heading.astro";
     toggleClass(loginModalOverlay, "flex", show);
     toggleClass(document.body, "overflow-hidden", show);
   };
+
   loginTriggers.forEach((trigger) =>
     trigger.addEventListener("click", (e) => {
       e.preventDefault();
