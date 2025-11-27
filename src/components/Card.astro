@@ -36,8 +36,8 @@ const rankColor = rankColorMap[rank] || "";
         {
           progress !== null && (
             <div
-              class="absolute left-0 bottom-0 bg-red-500"
-              style={`height:10px; width:${progress}%`}
+              class="absolute left-0 bottom-0 bg-red-500 h-[5px] md:h-[10px]"
+              style={`width:${progress}%`}
             />
           )
         }
@@ -47,7 +47,7 @@ const rankColor = rankColorMap[rank] || "";
       {
         rank && (
           <Text
-            stylingclasses={`absolute -left-4 -bottom-4 md:-bottom-8 lg:-bottom-10 font-bold leading-none ${rankColor} text-[100px] md:text-[150px] lg:text-[200px]`}
+            stylingclasses={`absolute -left-2 -bottom-4 md:-bottom-8 lg:-bottom-10 font-bold leading-none ${rankColor} text-[80px] md:text-[150px] lg:text-[200px]`}
           >
             {rank}
           </Text>
