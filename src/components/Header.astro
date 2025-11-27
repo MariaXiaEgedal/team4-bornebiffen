@@ -1,177 +1,86 @@
 ---
-
+import Text from "../components/Text.astro";
+import Heading from "../components/Heading.astro";
 ---
 
-<!-- HEADER -->
-<header class="flex items-center py-5 px-6 bg-red-800 text-white relative">
+<header
+  class="flex items-center py-5 px-6 bg-[var(--color-red-700)] text-[var(--base-white)] relative"
+>
   <!-- Logo -->
   <a href="/" class="z-40">
-    <img
-      id="logoDesktop"
-      src="/img/Hvidlogo.png"
-      alt="Børnebiffen logo"
-      class="h-16 w-auto"
-    />
+    <img src="/img/hvidlogo.svg" alt="Børnebiffen logo" class="h-16 w-auto" />
   </a>
 
   <!-- Desktop menu -->
   <nav class="hidden lg:flex gap-10 ml-auto items-center text-xl">
     <a href="#" class="hover:underline">Alle film</a>
-
-    <!-- Log ind åbner modal -->
     <a
       href="#"
       data-open-login
       class="flex items-center gap-2 hover:underline cursor-pointer"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 11c-1.105 0-2 .895-2 2v3h4v-3c0-1.105-.895-2-2-2z"></path>
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M7 11V9a5 5 0 0110 0v2M7 11h10v8H7z"></path>
-      </svg>
+      <img src="/img/lock.svg" alt="lockicon" class="h-5 w-auto" />
       Log ind
     </a>
-
     <a href="#" class="flex items-center gap-2 hover:underline">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-4.35-4.35M5 11a6 6 0 1112 0 6 6 0 01-12 0z"></path>
-      </svg>
+      <img src="/img/loop.svg" alt="loopicon" class="h-5 w-auto" />
       Søg
     </a>
   </nav>
 
-  <!-- Burger (kun mobil) -->
-  <button id="burgerBtn" class="ml-auto lg:hidden z-50" aria-label="Menu">
-    <svg
-      id="burgerIcon"
-      width="34"
-      height="34"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      class="text-white"
-    >
-      <path
-        id="burgerPath"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
+  <!-- Burger menu -->
+  <button
+    id="burgerBtn"
+    class="ml-auto lg:hidden z-50 flex flex-col items-center gap-1.5 w-9 h-9"
+    aria-label="Menu"
+  >
+    <span
+      class="block w-6 h-0.5 bg-white transition-transform duration-300 origin-center"
+    ></span>
+    <span class="block w-6 h-0.5 bg-white transition-opacity duration-300"
+    ></span>
+    <span
+      class="block w-6 h-0.5 bg-white transition-transform duration-300 origin-center"
+    ></span>
   </button>
 </header>
 
-<!-- MOBILE MENU -->
+<!-- Mobil menu -->
 <div
   id="mobileMenu"
-  class="fixed inset-0 bg-red-800 text-white hidden flex-col pt-8 z-40 lg:hidden"
+  class="fixed inset-0 bg-[var(--color-red-700)] text-[var(--base-white)] hidden flex-col pt-8 z-40 lg:hidden"
 >
   <div class="flex justify-between items-start px-6">
-    <img src="/img/Hvidlogo.png" alt="Børnebiffen logo" class="h-16 w-auto" />
-
-    <button id="closeMenu" class="text-white" aria-label="Luk menu">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-10 w-10"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    </button>
+    <img src="/img/hvidlogo.svg" alt="Børnebiffen logo" class="h-16 w-auto" />
   </div>
-
   <nav class="flex flex-col items-center gap-10 mt-20 text-3xl">
     <a href="#" class="hover:underline">Alle film</a>
-
     <a
       href="#"
       data-open-login
-      class="flex items-center gap-3 justify-center hover:underline cursor-pointer"
+      class="flex items-center gap-3 hover:underline cursor-pointer"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 11c-1.105 0-2 .895-2 2v3h4v-3c0-1.105-.895-2-2-2z"></path>
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M7 11V9a5 5 0 0110 0v2M7 11h10v8H7z"></path>
-      </svg>
+      <img src="/img/lock.svg" alt="lockicon" class="h-6 w-auto" />
       Log ind
     </a>
-
-    <a href="#" class="flex items-center gap-3 justify-center hover:underline">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-4.35-4.35M5 11a6 6 0 1112 0 6 6 0 01-12 0z"></path>
-      </svg>
+    <a href="#" class="flex items-center gap-3 hover:underline">
+      <img src="/img/loop.svg" alt="loopicon" class="h-6 w-auto" />
       Søg
     </a>
   </nav>
 </div>
 
-<!-- LOGIN MODAL -->
+<!-- Login modal -->
 <div
   id="loginModalOverlay"
-  class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden justify-center items-center z-50"
+  class="fixed inset-0 bg-[var(--base-black/50)] backdrop-blur-sm hidden justify-center items-center z-50"
 >
   <div
-    class="bg-white rounded-3xl border-4 border-blue-400
-           p-6 sm:p-7
-           w-[90%] max-w-md sm:max-w-lg
-           relative"
+    class="bg-[var(--base-white)] rounded-xl border-4 border-[var(--primary-blue)] p-6 sm:p-7 w-[90%] max-w-md sm:max-w-lg relative"
   >
-    <!-- Luk-knap -->
     <button
       id="closeLoginModal"
-      class="absolute top-4 right-4 text-blue-400 hover:text-blue-600 transition"
+      class="absolute top-4 right-4 text-[var(--primary-blue)] hover:text-[var(--color-blue-700)] transition"
       aria-label="Luk login"
     >
       <svg
@@ -188,25 +97,21 @@
           d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
-
-    <!-- Indhold -->
-    <div class="grid grid-cols-2 gap-5 items-center">
-      <!-- Tekst + knap -->
+    <div class="grid grid-cols-2 gap-3 sm:gap-5 items-center">
       <div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-blue-400 mb-3">
-          Log ind
-        </h2>
-
-        <p class="text-base sm:text-lg text-black leading-snug mb-5">
-          Brug dit bibliotekslogin <br />
-          til at se alle vores film.
-        </p>
-
-        <!-- Kun UI, ingen funktion -->
+        <Heading
+          htmlheading="h4"
+          size="medium"
+          stylingclasses="text-[var(--primary-blue)] mb-3">Log ind</Heading
+        >
+        <Text
+          teksttype="brødtekst"
+          stylingclasses="text-base sm:text-lg text-[var(--base-black)] mb-5 leading-snug"
+        >
+          Brug dit bibliotekslogin <br /> til at se alle vores film.
+        </Text>
         <button
-          class="inline-flex items-center gap-2 bg-blue-400 hover:bg-blue-500
-                 text-black font-bold rounded-full px-5 py-3 text-base sm:text-lg
-                 transition"
+          class="inline-flex items-center gap-2 bg-[var(--primary-blue)] hover:bg-[var(--color-blue-700)] text-[var(--base-black)] font-bold rounded-xl px-4 py-3 text-sm sm:text-lg transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -229,114 +134,61 @@
           Log ind
         </button>
       </div>
-
-      <!-- Bjørnen -->
       <div class="flex justify-center">
         <img
           src="/img/logindbamse.webp"
           alt="Bamse med popcorn"
-          class="w-28 sm:w-32 md:w-36"
+          class="w-28 sm:w-32 md:w-40"
         />
       </div>
     </div>
   </div>
 </div>
 
-<!-- SCRIPT -->
 <script>
-  // --- BURGERMENU ---
+  // Funktion til at toggle klasser
+  const toggleClass = (element, className, condition) => {
+    element?.classList.toggle(className, condition);
+  };
 
+  // Burger menu toggle
   const burgerBtn = document.getElementById("burgerBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-  const burgerPath = document.getElementById("burgerPath");
-  const closeMenuBtn = document.getElementById("closeMenu");
-  let menuOpen = false;
 
-  function openMenu() {
-    menuOpen = true;
-    mobileMenu.classList.remove("hidden");
-    document.body.classList.add("overflow-hidden");
-    // skift til kryds
-    burgerPath.setAttribute("d", "M6 18L18 6M6 6l12 12");
-  }
+  burgerBtn?.addEventListener("click", () => {
+    const menuOpen = !mobileMenu.classList.contains("hidden");
+    toggleClass(mobileMenu, "hidden", menuOpen);
+    toggleClass(document.body, "overflow-hidden", !menuOpen);
 
-  function closeMenu() {
-    menuOpen = false;
-    mobileMenu.classList.add("hidden");
-    document.body.classList.remove("overflow-hidden");
-    // skift tilbage til burger
-    burgerPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
-  }
-
-  if (burgerBtn) {
-    burgerBtn.addEventListener("click", function () {
-      if (menuOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-  }
-
-  if (closeMenuBtn) {
-    closeMenuBtn.addEventListener("click", function () {
-      closeMenu();
-    });
-  }
-
-  if (mobileMenu) {
-    const menuLinks = mobileMenu.querySelectorAll("a");
-    menuLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        closeMenu();
-      });
-    });
-  }
-
-  // --- LOGIN-MODAL ---
-
-  const loginModalOverlay = document.getElementById("loginModalOverlay");
-  const closeLoginModalBtn = document.getElementById("closeLoginModal");
-  const loginTriggers = document.querySelectorAll("[data-open-login]");
-
-  function openLoginModal(event) {
-    if (event) event.preventDefault();
-
-    // hvis mobilmenuen er åben, luk den først
-    if (menuOpen) {
-      closeMenu();
-    }
-
-    if (loginModalOverlay) {
-      loginModalOverlay.classList.remove("hidden");
-      loginModalOverlay.classList.add("flex");
-      document.body.classList.add("overflow-hidden");
-    }
-  }
-
-  function closeLoginModal() {
-    if (loginModalOverlay) {
-      loginModalOverlay.classList.add("hidden");
-      loginModalOverlay.classList.remove("flex");
-      document.body.classList.remove("overflow-hidden");
-    }
-  }
-
-  loginTriggers.forEach(function (trigger) {
-    trigger.addEventListener("click", openLoginModal);
+    // Animér burger-menuen
+    const [top, middle, bottom] = burgerBtn.children;
+    toggleClass(top, "translate-y-2", !menuOpen);
+    toggleClass(top, "rotate-45", !menuOpen);
+    toggleClass(middle, "opacity-0", !menuOpen);
+    toggleClass(bottom, "-translate-y-2", !menuOpen);
+    toggleClass(bottom, "-rotate-45", !menuOpen);
   });
 
-  if (closeLoginModalBtn) {
-    closeLoginModalBtn.addEventListener("click", function () {
-      closeLoginModal();
-    });
-  }
+  // Login modal toggle
+  const loginModalOverlay = document.getElementById("loginModalOverlay");
+  const closeLoginModal = document.getElementById("closeLoginModal");
+  const loginTriggers = document.querySelectorAll("[data-open-login]");
 
-  if (loginModalOverlay) {
-    loginModalOverlay.addEventListener("click", function (event) {
-      if (event.target === loginModalOverlay) {
-        closeLoginModal();
-      }
-    });
-  }
+  const toggleLoginModal = (show) => {
+    toggleClass(loginModalOverlay, "hidden", !show);
+    toggleClass(loginModalOverlay, "flex", show);
+    toggleClass(document.body, "overflow-hidden", show);
+  };
+  loginTriggers.forEach((trigger) =>
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleLoginModal(true);
+    })
+  );
+
+  closeLoginModal?.addEventListener("click", () => toggleLoginModal(false));
+
+  loginModalOverlay?.addEventListener("click", (e) => {
+    if (e.target === loginModalOverlay) toggleLoginModal(false);
+  });
 </script>

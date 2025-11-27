@@ -1,8 +1,9 @@
 ---
-
+import Text from "../components/Text.astro";
+import Heading from "../components/Heading.astro";
 ---
 
-<section class="w-full bg-[#94D652]">
+<section class="w-full bg-[var(--color-green-300)]">
   <div
     class="max-w-6xl mx-auto px-4 py-10 lg:py-16
              flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12"
@@ -10,40 +11,41 @@
     <!-- BILLEDE – mobil: øverst, desktop: til højre -->
     <div class="order-1 lg:order-2 flex justify-center">
       <img
-        src="/img/appbillede.webp"
+        src="/img/appbillede.svg"
         alt="Børnebiffen app på telefon og tablet"
         class="w-full max-w-sm lg:max-w-md drop-shadow-lg"
       />
     </div>
 
     <!-- TEKST + KNAPPER – mobil: under billede, desktop: til venstre -->
-    <div class="order-2 lg:order-1 text-black">
-      <h2 class="text-2xl lg:text-3xl font-extrabold mb-4">
-        Hent Børnebiffen-appen og se film med de yngste
-      </h2>
 
-      <p class="text-base lg:text-lg mb-4">
+    <div class="order-2 lg:order-1 text-[var(--base-black)]">
+      <Text teksttype="fedbrødtekst" stylingclasses="mb-5">
+        Hent Børnebiffen-appen og se film med de yngste</Text
+      >
+
+      <Text teksttype="brødtekst" stylingclasses="mb-5">
         Download Børnebiffen-appen i din app store, og få adgang til vores
-        udvalg af trygge og håndplukkede kortfilm til børn i alderen 2–6 år.
-      </p>
+        udvalg af trygge og håndplukkede kortfilm til børn i alderen 2–6 år.</Text
+      >
 
-      <p class="text-base lg:text-lg mb-4">
+      <Text teksttype="brødtekst" stylingclasses="mb-5">
         Appen er udviklet til både smartphones og tablets, så børn og voksne
-        nemt kan se film sammen.
-      </p>
+        nemt kan se film sammen.</Text
+      >
 
-      <p class="text-base lg:text-lg mb-6">
-        Du kan hente appen til både Android og iOS.
-      </p>
+      <Text teksttype="brødtekst" stylingclass="">
+        Du kan hente appen til både Android og iOS.</Text
+      >
 
       <!-- APP STORE-BADGES -->
-      <div class="flex flex-row flex-wrap gap-4">
+      <div class="flex flex-row flex-wrap gap-4 mt-5">
         <a
           href="#"
           class="inline-block transition-transform duration-200 hover:scale-105"
         >
           <img
-            src="/img/appstore.png"
+            src="/img/appstoreknap.svg"
             alt="Hent i App Store"
             class="h-12 lg:h-14 w-auto"
           />
@@ -54,7 +56,7 @@
           class="inline-block transition-transform duration-200 hover:scale-105"
         >
           <img
-            src="/img/googleplay.png"
+            src="/img/googleplayknap.svg"
             alt="Get it on Google Play"
             class="h-12 lg:h-14 w-auto"
           />
