@@ -3,7 +3,7 @@ import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 ---
 
-<div class="relative w-full h-[600px] md:h-[650px] mb-10 overflow-visible">
+<div class="relative w-full h-[420px] md:h-[650px] overflow-visible">
   <img
     src="/img/herobillede.svg"
     alt="Hero background"
@@ -12,26 +12,74 @@ import Text from "./Text.astro";
   />
 
   <!-- de runde billeder i slide -->
-  <div class="absolute left-1/2 -translate-x-1/2 w-full z-30 lg:bottom-0 sm:bottom-[200px]  bottom-[300px]">
+  <div
+    class="absolute left-0 w-full z-30 lg:bottom-0 sm:bottom-[40px] bottom-[20px]"
+  >
     <div
-      class="mx-auto w-full max-w-[1100px] lg:max-w-none flex justify-start overflow-x-auto overflow-y-hidden h-[160px] md:h-[200px] lg:h-[220px] items-center snap-x snap-mandatory py-3 px-6 lg:px-0 hero-slider-viewport"
+      class="max-w-[1100px] md:mx-auto lg:max-w-none flex justify-start overflow-x-auto overflow-y-hidden md:h-[200px] items-center snap-x snap-mandatory lg:px-0 hero-slider-viewport"
     >
-      <div class="flex items-center gap-[10px] sm:gap-[60px] hero-slider-track">
-        <img src="/img/cirkeline.png" alt="Cirkeline" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/graulv.png" alt="Graulv" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/ib.png" alt="Ib" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/lillefinger.png" alt="Lillefinger" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/rita.png" alt="Rita" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/vitello.png" alt="Vitello" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/cirkeline.png" alt="Cirkeline" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/graulv.png" alt="Graulv" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/ib.png" alt="Ib" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/lillefinger.png" alt="Lillefinger" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/rita.png" alt="Rita" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-        <img src="/img/vitello.png" alt="Vitello" class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]" />
-     
+      <div class="flex items-center gap-[10px] sm:gap-[50px] hero-slider-track">
+        <img
+          src="/img/cirkeline.png"
+          alt="Cirkeline"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/graulv.png"
+          alt="Graulv"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/ib.png"
+          alt="Ib"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/lillefinger.png"
+          alt="Lillefinger"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/rita.png"
+          alt="Rita"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/vitello.png"
+          alt="Vitello"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/cirkeline.png"
+          alt="Cirkeline"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/graulv.png"
+          alt="Graulv"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/ib.png"
+          alt="Ib"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/lillefinger.png"
+          alt="Lillefinger"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/rita.png"
+          alt="Rita"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
+        <img
+          src="/img/vitello.png"
+          alt="Vitello"
+          class="hero-slide-item w-28 h-28 sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[180px] lg:h-[180px]"
+        />
       </div>
-      
     </div>
   </div>
 
@@ -49,10 +97,8 @@ import Text from "./Text.astro";
 </div>
 
 <style>
-  
   .hero-slider-viewport {
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none; /
     scrollbar-width: none; /* Firefox: fjern scrollbar */
     overflow-y: hidden; /* sørg for ingen vertikal scroll */
   }
@@ -60,52 +106,4 @@ import Text from "./Text.astro";
   .hero-slider-viewport::-webkit-scrollbar {
     display: none; /* Safari and Chrome: fjern scrollbar */
   }
-
-  .hero-slide-item {
-    object-fit: cover;
-    display: block;
-  }
-
-  /* class applied by JS when a slide is centered */
-  .hero-slide-item.is-center {
-    transform: scale(1.28);
-  }
-  /* slight enlarge on hover for non-centered slides */
-  .hero-slide-item:not(.is-center):hover {
-    transform: scale(1.08);
-  }
-  .hero-slide-item {
-    width: 100px;
-    height: 100px;
-    transition: transform 0.3s ease;
-    scroll-snap-align: center;
-    flex-shrink: 0;
-    border-radius: 9999px; /* make round */
-  }
-
-  @media (min-width: 640px) {
-    .hero-slider-wrapper {
-      bottom: 20px;
-    }
-    .hero-slider-track {
-      gap: 60px;
-    }
-    .hero-slide-item {
-      width: 120px;
-      height: 120px;
-    }
-    .hero-slider-viewport {
-      height: 150px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .hero-slide-item {
-      width: 180px;
-      height: 180px;
-    }
-  }
-
- 
 </style>
-
