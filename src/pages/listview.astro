@@ -11,17 +11,19 @@ import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Børnebiffen">
-  <!-- /*************************************************/ Søge felt /*************************************************/ -->
+  <!-- /*************************************************/ Sart Søge felt /*************************************************/ -->
   <section id="sogefelt">
     <SogeFelt />
   </section>
+  <!-- /*************************************************/ Slut Søge felt /*************************************************/ -->
 
-  <!-- /*************************************************/ Alder /*************************************************/ -->
+  <!-- /*************************************************/ Start Alder /*************************************************/ -->
   <section id="alder">
     <Alder />
   </section>
+  <!-- /*************************************************/ Slut Alder /*************************************************/ -->
 
-  <!-- /*************************************************/ Alle film /*************************************************/ -->
+  <!-- /*************************************************/ Start Alle film /*************************************************/ -->
   <section class="px-[20px] md:px-[50px] lg:px-[100px] pt-[40px] md:pt-[80px]">
     <Heading htmlheading="h2" size="medium">Alle film - 398</Heading>
 
@@ -111,12 +113,122 @@ import Card from "../components/Card.astro";
         cardtime="2 min"
       />
     </div>
+
+    <!-- Gentagelse af de samme 12 kort i en skjult wrapper -->
+    <div
+      id="moreCards"
+      class="mt-6 grid gap-6 grid-cols-2 lg:grid-cols-3 auto-rows-auto"
+    >
+      <Card
+        url="/singleview"
+        cardimage="/img/alle1.webp"
+        cardimagealt="Prik og Plet leger med dej"
+        cardtitel="Prik og Plet leger med dej"
+        cardtime="7 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle2.webp"
+        cardimagealt="Pipungerne - Hittebarnet"
+        cardtitel="Pipungerne - Hittebarnet"
+        cardtime="5 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle3.webp"
+        cardimagealt="Rita og Krokodille: Zoo"
+        cardtitel="Rita og Krokodille: Zoo"
+        cardtime="5 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle4.webp"
+        cardimagealt="Antons lille gryde"
+        cardtitel="Antons lille gryde"
+        cardtime="6 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle5.webp"
+        cardimagealt="Sallies historier - Kong Gulleroth"
+        cardtitel="Sallies historier - Kong Gulleroth"
+        cardtime="7 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle6.webp"
+        cardimagealt="Sømanden"
+        cardtitel="Sømanden"
+        cardtime="6 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle7.webp"
+        cardimagealt="Cirkeline: På ferie"
+        cardtitel="Cirkeline: Zigeunerne"
+        cardtime="11 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle8.webp"
+        cardimagealt="Den lille fugl og egernet"
+        cardtitel="Den lille fugl og egernet"
+        cardtime="4 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle9.webp"
+        cardimagealt="Lillefinger - Det gamle år"
+        cardtitel="Lillefinger - Det gamle år"
+        cardtime="5 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle10.webp"
+        cardimagealt="Lili holder fest"
+        cardtitel="Lili holder fest"
+        cardtime="3 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle11.webp"
+        cardimagealt="Flagermusen"
+        cardtitel="Flagermusen"
+        cardtime="4 min"
+      />
+      <Card
+        url="/singleview"
+        cardimage="/img/alle12.webp"
+        cardimagealt="Løven og Musen"
+        cardtitel="Løven og Musen"
+        cardtime="2 min"
+      />
+    </div>
+  </section>
+  <!-- /*************************************************/ Slut Alle film /*************************************************/ -->
+
+  <!-- /*************************************************/ Start Knap /*************************************************/ -->
+  <section class="py-[40px] md:py-[80px]">
+    <div id="seMereBtnWrapper">
+      <Button type="button">
+        <Text teksttype="fedbrødtekst">
+          <span id="seMereText" class="text-3xl font-bold">Se flere</span>
+        </Text>
+      </Button>
+    </div>
   </section>
 
-  <!-- /*************************************************/ Knap /*************************************************/ -->
-  <section class="py-[40px] md:py-[80px]">
-    <Button>
-      <Text teksttype="fedbrødtekst">Se flere</Text>
-    </Button>
-  </section>
+  <!-- lille, enkel klient-side script til at toggle -->
+  <script>
+    const more = document.getElementById("moreCards");
+    const btnText = document.getElementById("seMereText");
+    document
+      .getElementById("seMereBtnWrapper")
+      ?.addEventListener("click", () => {
+        if (!more || !btnText) return;
+        const isHidden = more.classList.toggle("hidden");
+        btnText.textContent = isHidden ? "Se flere" : "Se færre";
+      });
+  </script>
+  <!-- /*************************************************/ Slut Knap /*************************************************/ -->
 </MainLayout>
