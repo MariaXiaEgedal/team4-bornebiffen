@@ -7,9 +7,22 @@ import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Børnebiffen-Listevisning">
-  <div
-    class="absolute left-[20px] top-[130px] md:left-[50px] md:top-[140px] lg:left-[100px] z-30"
-  >
+  <!-- BOBLER -->
+  <div class="w-full overflow-hidden">
+    <img
+      src="/img/bobler.svg"
+      alt=""
+      class="hidden md:block w-full h-auto object-cover"
+    />
+    <img
+      src="/img/boblermobil.svg"
+      alt=""
+      class="block md:hidden w-full h-auto object-cover"
+    />
+  </div>
+
+  <!-- TILBAGE KNAP -->
+  <div class="pt-[20px] md:pt-[40px] px-[20px] md:px-[50px] lg:px-[100px]">
     <a href="/">
       <img
         src="/img/tilbage.svg"
@@ -20,7 +33,7 @@ import Card from "../components/Card.astro";
   </div>
 
   <!-- /*************************************************/ Sart Søge felt /*************************************************/ -->
-  <section class="pt-[40px] md:pt-[80px] mt-[40px] md:mt-[20px]">
+  <section class="mt-[20px] md:mt-[40px]">
     <div class="max-w-[900px] mx-auto px-[20px]">
       <div class="relative">
         <img
@@ -46,6 +59,7 @@ import Card from "../components/Card.astro";
       </div>
     </div>
   </section>
+
   <!-- /*************************************************/ Slut Søge felt /*************************************************/ -->
 
   <!-- /*************************************************/ Start Alder /*************************************************/ -->
