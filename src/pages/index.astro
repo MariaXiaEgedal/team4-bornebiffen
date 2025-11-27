@@ -88,54 +88,70 @@ import CardCarousel from "../components/CardCarousel.astro";
 
   <!-- ***************************** Start Udforsk vores juleunivers ***************************** -->
   <section class="px-[20px] md:px-[50px] lg:px-[100px] pt-[40px] md:pt-[80px]">
-    <CardCarousel
-      titel="Udforsk vores juleunivers"
-      bg="bg-red-500"
-      cards={[
-        {
-          url: "/singleview",
-          cardimage: "/img/jul1.webp",
-          cardimagealt: "Rita og Krokodille: Jul",
-          cardtitel: "Rita og Krokodille: Jul",
-          cardtime: "5 min",
-        },
-        {
-          url: "/singleview",
-          cardimage: "/img/jul2.webp",
-          cardimagealt: "Jagten på julemanden",
-          cardtitel: "Jagten på julemanden",
-          cardtime: "17 min",
-        },
-        {
-          url: "/singleview",
-          cardimage: "/img/jul3.webp",
-          cardimagealt: "Cirkeline: Højt fra træets grønne top",
-          cardtitel: "Cirkeline: Højt fra træets grønne top",
-          cardtime: "14 min",
-        },
-        {
-          url: "/singleview",
-          cardimage: "/img/jul4.webp",
-          cardimagealt: "Vitello køber en vidunderlig julegave",
-          cardtitel: "Vitello køber en vidunderlig julegave",
-          cardtime: "7 min",
-        },
-        {
-          url: "/singleview",
-          cardimage: "/img/jul5.webp",
-          cardimagealt: "Lillefinger - Lillebror",
-          cardtitel: "Lillefinger - Lillebror",
-          cardtime: "5 min",
-        },
-        {
-          url: "/singleview",
-          cardimage: "/img/jul6.webp",
-          cardimagealt: "Hunden Ib 6:10 - Hunden Ib holder lillejuleaften",
-          cardtitel: "Hunden Ib 6:10 - Hunden Ib holder lillejuleaften",
-          cardtime: "4 min",
-        },
-      ]}
-    />
+    <div class="relative">
+      <img
+        src="/img/julepynt.svg"
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 w-full h-full object-contain z-40 hidden md:block"
+      />
+      <img
+        src="/img/snefnug.svg"
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 w-full h-full object-contain z-40 block md:hidden"
+      />
+      <div class="relative z-10">
+        <CardCarousel
+          titel="Udforsk vores juleunivers"
+          bg="bg-red-500"
+          cards={[
+            {
+              url: "/singleview",
+              cardimage: "/img/jul1.webp",
+              cardimagealt: "Rita og Krokodille: Jul",
+              cardtitel: "Rita og Krokodille: Jul",
+              cardtime: "5 min",
+            },
+            {
+              url: "/singleview",
+              cardimage: "/img/jul2.webp",
+              cardimagealt: "Jagten på julemanden",
+              cardtitel: "Jagten på julemanden",
+              cardtime: "17 min",
+            },
+            {
+              url: "/singleview",
+              cardimage: "/img/jul3.webp",
+              cardimagealt: "Cirkeline: Højt fra træets grønne top",
+              cardtitel: "Cirkeline: Højt fra træets grønne top",
+              cardtime: "14 min",
+            },
+            {
+              url: "/singleview",
+              cardimage: "/img/jul4.webp",
+              cardimagealt: "Vitello køber en vidunderlig julegave",
+              cardtitel: "Vitello køber en vidunderlig julegave",
+              cardtime: "7 min",
+            },
+            {
+              url: "/singleview",
+              cardimage: "/img/jul5.webp",
+              cardimagealt: "Lillefinger - Lillebror",
+              cardtitel: "Lillefinger - Lillebror",
+              cardtime: "5 min",
+            },
+            {
+              url: "/singleview",
+              cardimage: "/img/jul6.webp",
+              cardimagealt: "Hunden Ib 6:10 - Hunden Ib holder lillejuleaften",
+              cardtitel: "Hunden Ib 6:10 - Hunden Ib holder lillejuleaften",
+              cardtime: "4 min",
+            },
+          ]}
+        />
+      </div>
+    </div>
   </section>
   <!-- ***************************** Slut Udforsk vores juleunivers ***************************** -->
 
