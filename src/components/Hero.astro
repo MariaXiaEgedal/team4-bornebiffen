@@ -107,3 +107,16 @@ import Text from "./Text.astro";
     display: none; /* Safari and Chrome: fjern scrollbar */
   }
 </style>
+
+<style>
+  .hero-slide-item {
+    transition: transform 0.18s ease-in-out;
+    will-change: transform;
+    cursor: pointer;
+  }
+
+  .hero-slide-item:hover,
+  .hero-slide-item:focus {
+    transform: scale(1.06);
+  }
+</style>
